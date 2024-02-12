@@ -88,13 +88,12 @@ def filter(data: pd.DataFrame, column: str, values: List[str]) -> pd.DataFrame:
 def load_data(username, token, domain, projectKey):
     rawData = getApiPagination(username, token, domain, projectKey)
 
-    df = pd.DataFrame(columns=["id","key","summary","status","assignee","issuetype","priority","creator","labels", "description","created","updated"])
-
+    columns=["id","key","summary","status","assignee","issuetype","priority","creator","labels", "description","created","updated"]
     issueList = rawData.get("issues")
-
+    data = [] 
     for issue in issueList:
         replace_none(issue)
-        issueInfo = {
+        issue_info = {
                         "id": issue.get("id"), 
                         "key": issue.get("key"),
                         "summary": issue.get("fields").get("summary", None),
@@ -108,8 +107,8 @@ def load_data(username, token, domain, projectKey):
                         "created": issue.get("fields").get("created", None),
                         "updated": issue.get("fields").get("updated", None),
                     }
-        df = df.append(issueInfo, ignore_index=True)
-        
+        data.append(issue_info) 
+    df = pd.DataFrame(data, columns=columns)
     return df
 
 def format_chat_history_to_markdown(chat_history):
