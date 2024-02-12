@@ -18,10 +18,6 @@ import logging
     
 logging.basicConfig()
 
-os.environ['OPENAI_API_KEY'] = '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'
-os.environ['GOOGLE_CSE_ID']='564d2fb8ad0a14540'
-os.environ['GOOGLE_API_KEY']='AIzaSyCQlLrjXEWuhN2nz6_QFORyI9B6-Aqzzlg'
-
 def save_file(file):
     folder = 'data'
     if not os.path.exists(folder):

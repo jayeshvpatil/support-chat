@@ -4,10 +4,15 @@ from streaming import StreamHandler, PrintRetrievalHandler
 import os
 from jira import get_issues
 
+
+os.environ['OPENAI_API_KEY'] = st.secrets["api_keys"]["OPENAI_API_KEY"]
+os.environ['GOOGLE_CSE_ID']=st.secrets["api_keys"]["GOOGLE_CSE_ID"]
+os.environ['GOOGLE_API_KEY']=st.secrets["api_keys"]["GOOGLE_API_KEY"]
+
 st.set_page_config(page_title="Interweb Explorer", page_icon="🌐",        layout="wide",
         initial_sidebar_state="expanded",)
 
-st.sidebar.image("assets/further-logo.png",width=350)   
+st.sidebar.image("assets/further-logo.png",width=300)   
 # Sidebar
 st.sidebar.header("About")
 st.sidebar.markdown(
