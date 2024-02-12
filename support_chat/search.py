@@ -47,15 +47,17 @@ with tab2:
         # Write answer and sources
         tab1, tab2 = st.tabs(['Further Knowledgebase', 'GA4 Documentation'])
         with tab1:
-            retrieval_streamer_cb = PrintRetrievalHandler(st.container())
-            answer = st.empty()
-            stream_handler = StreamHandler(answer, initial_text="`Answer:`\n\n")
-            search_result = qa_chain({"question": question},callbacks=[retrieval_streamer_cb, stream_handler])
+            with st.spinner("Searching Further's knowledgebase...."):
+                retrieval_streamer_cb = PrintRetrievalHandler(st.container())
+                answer = st.empty()
+                stream_handler = StreamHandler(answer, initial_text="`Answer:`\n\n")
+                search_result = qa_chain({"question": question},callbacks=[retrieval_streamer_cb, stream_handler])
             answer.markdown(search_result['answer'])
         with tab2:
-            retrieval_streamer_cb = PrintRetrievalHandler(st.container())
-            answer = st.empty()
-            stream_handler = StreamHandler(answer, initial_text="`Answer:`\n\n")
-            search_result = search_retriever_chain({"question": question},callbacks=[retrieval_streamer_cb, stream_handler])
-            answer.markdown(search_result['answer'])
+            with st.spinner("Searching the GA4 Documentation and web..."):
+                retrieval_streamer_cb = PrintRetrievalHandler(st.container())
+                answer = st.empty()
+                stream_handler = StreamHandler(answer, initial_text="`Answer:`\n\n")
+                search_result = search_retriever_chain({"question": question},callbacks=[retrieval_streamer_cb, stream_handler])
+                answer.markdown(search_result['answer'])
             st.info('`Sources:`\n\n' + search_result['sources'])
