@@ -1,0 +1,1367 @@
+Case #,Question,Answer,Simplefied question,Simplified Answer
+"""00001078""","We are currently in the process of migrating to Shopify for our website platform and had some questions around GA4/GTM best practices. Hoping that you could help answer or point us in the right direction. For context - we are planning to use GA4/GTM for all of our front event logging and behavior reporting (in the past we have used Segment). 
+
+
+Should we be setting up an entirely new GA4 implementation for our Shopify site or should we use the existing GA4 that is hooked up to our legacy site? I am assuming that things like our checkout flow/add to bag triggers would have to change as they are different front ends? 
+In terms of GTM, do we need to set up a new instance or container for Shopify? Trying to figure out best practices here. ","GA4 Property - There is no reason you would need to switch properties if you’re already using GA4 and it’s still the same site, but just the e-commerce portion is changing. Some of your e-commerce events will probably change, but being able to compare performance as a whole against historical data would be useful if you kept your existing GA4 property. That said, if you don’t like your existing setup and want to start over across the site with your implementation/setup, it might be worth starting fresh with a new one. 
+
+GTM Container - Again, there wouldn’t be any harm in keeping your existing GTM container. However, you will probably have to update your existing e-commerce implementation to account for your new flow and new triggers (if they are not currently based on data layer events that are being transferred to the new Shopify platform). Same disclaimer as I gave above, if you want to start fresh on your implementation as a whole, it might be worth setting up a new container
+
+
+
+Also, it sounds like you’ve already started with GA4 and GTM, but are new to it, so wanted to also just give you some other important items that you can unlock within GA4: 
+If you are moving away from Segment and want to maintain insight into cross-channel tracking and audiences, GA4 seamlessly integrates with Google Marketing Platform products, including Search Ads 360 and Display and Video 360. If integrated, you can see cross-channel attribution data in the Model comparison and Conversion paths reports. GA4 also exports audiences and conversion data to Search Ads 360 and Display and Video 360, and you can use those conversions for custom bidding on both media platforms.
+Provides machine learning capabilities in a lot of areas (predictive audiences, insights, conversion modeling) that will allow you to market more effectively, but also help you with solutions as more privacy restrictions come into play. 
+Allows you to consolidate mobile app and web data in one property 
+Includes Explore reporting, which allows for ad hoc analysis and data visualization options within the tool (unsampled and limited lookback window restrictions with 360)","Should we start fresh with a new Google Analytics 4 property for our Shopify site, or use the existing one from our legacy site?","You can likely keep your existing GA4 property and just update the e-commerce events and triggers specific to Shopify. This way, you can compare performance over time and maintain historical data. However, if you're unhappy with your current setup or want a clean slate, starting fresh with a new GA4 property for Shopify is also an option."
+"""00001078""","We are currently in the process of migrating to Shopify for our website platform and had some questions around GA4/GTM best practices. Hoping that you could help answer or point us in the right direction. For context - we are planning to use GA4/GTM for all of our front event logging and behavior reporting (in the past we have used Segment). 
+
+
+Should we be setting up an entirely new GA4 implementation for our Shopify site or should we use the existing GA4 that is hooked up to our legacy site? I am assuming that things like our checkout flow/add to bag triggers would have to change as they are different front ends? 
+In terms of GTM, do we need to set up a new instance or container for Shopify? Trying to figure out best practices here. ","GA4 Property - There is no reason you would need to switch properties if you’re already using GA4 and it’s still the same site, but just the e-commerce portion is changing. Some of your e-commerce events will probably change, but being able to compare performance as a whole against historical data would be useful if you kept your existing GA4 property. That said, if you don’t like your existing setup and want to start over across the site with your implementation/setup, it might be worth starting fresh with a new one. 
+
+GTM Container - Again, there wouldn’t be any harm in keeping your existing GTM container. However, you will probably have to update your existing e-commerce implementation to account for your new flow and new triggers (if they are not currently based on data layer events that are being transferred to the new Shopify platform). Same disclaimer as I gave above, if you want to start fresh on your implementation as a whole, it might be worth setting up a new container
+
+
+
+Also, it sounds like you’ve already started with GA4 and GTM, but are new to it, so wanted to also just give you some other important items that you can unlock within GA4: 
+If you are moving away from Segment and want to maintain insight into cross-channel tracking and audiences, GA4 seamlessly integrates with Google Marketing Platform products, including Search Ads 360 and Display and Video 360. If integrated, you can see cross-channel attribution data in the Model comparison and Conversion paths reports. GA4 also exports audiences and conversion data to Search Ads 360 and Display and Video 360, and you can use those conversions for custom bidding on both media platforms.
+Provides machine learning capabilities in a lot of areas (predictive audiences, insights, conversion modeling) that will allow you to market more effectively, but also help you with solutions as more privacy restrictions come into play. 
+Allows you to consolidate mobile app and web data in one property 
+Includes Explore reporting, which allows for ad hoc analysis and data visualization options within the tool (unsampled and limited lookback window restrictions with 360)","Do we need a separate GTM container for our Shopify site, or can we use our existing one?","You can typically stick with your existing GTM container, but you'll need to update the e-commerce implementation to reflect the new Shopify flow and trigger points. If it's based on data layer events transferred to Shopify, adjustments might be minimal. Again, you can also choose to start fresh with a new GTM container specifically for Shopify if you prefer."
+"""00001078""","We are currently in the process of migrating to Shopify for our website platform and had some questions around GA4/GTM best practices. Hoping that you could help answer or point us in the right direction. For context - we are planning to use GA4/GTM for all of our front event logging and behavior reporting (in the past we have used Segment). 
+
+
+Should we be setting up an entirely new GA4 implementation for our Shopify site or should we use the existing GA4 that is hooked up to our legacy site? I am assuming that things like our checkout flow/add to bag triggers would have to change as they are different front ends? 
+In terms of GTM, do we need to set up a new instance or container for Shopify? Trying to figure out best practices here. ","GA4 Property - There is no reason you would need to switch properties if you’re already using GA4 and it’s still the same site, but just the e-commerce portion is changing. Some of your e-commerce events will probably change, but being able to compare performance as a whole against historical data would be useful if you kept your existing GA4 property. That said, if you don’t like your existing setup and want to start over across the site with your implementation/setup, it might be worth starting fresh with a new one. 
+
+GTM Container - Again, there wouldn’t be any harm in keeping your existing GTM container. However, you will probably have to update your existing e-commerce implementation to account for your new flow and new triggers (if they are not currently based on data layer events that are being transferred to the new Shopify platform). Same disclaimer as I gave above, if you want to start fresh on your implementation as a whole, it might be worth setting up a new container
+
+
+
+Also, it sounds like you’ve already started with GA4 and GTM, but are new to it, so wanted to also just give you some other important items that you can unlock within GA4: 
+If you are moving away from Segment and want to maintain insight into cross-channel tracking and audiences, GA4 seamlessly integrates with Google Marketing Platform products, including Search Ads 360 and Display and Video 360. If integrated, you can see cross-channel attribution data in the Model comparison and Conversion paths reports. GA4 also exports audiences and conversion data to Search Ads 360 and Display and Video 360, and you can use those conversions for custom bidding on both media platforms.
+Provides machine learning capabilities in a lot of areas (predictive audiences, insights, conversion modeling) that will allow you to market more effectively, but also help you with solutions as more privacy restrictions come into play. 
+Allows you to consolidate mobile app and web data in one property 
+Includes Explore reporting, which allows for ad hoc analysis and data visualization options within the tool (unsampled and limited lookback window restrictions with 360)",What are some additional benefits of using GA4 for Shopify?,"GA4 offers several advantages beyond basic tracking:
+
+Cross-channel insights: Seamless integration with Google Marketing Platform tools like Search Ads 360 and Display & Video 360 for cross-channel attribution and audience management.
+Machine learning: Predictive audiences, conversion modeling, and other AI-powered features for improved marketing effectiveness and addressing privacy concerns.
+Unified data: Combine mobile app and web data in one property for a holistic view of user behavior.
+Flexible reporting: Explore reports enable ad-hoc analysis and data visualization within the tool.
+Ultimately, the decision of whether to reuse existing setups or start fresh depends on your specific needs and preferences. Consider the value of historical data, your comfort level with existing configurations, and your interest in using GA4's advanced features."
+"""00001592""","Hi,
+
+Our data is affected by the attribution bug<https://www.ga4bigquery.com/how-to-fix-major-ga4-misattribution-bug-for-paid-search-events-and-sessions-gclid/> that causes Google Ads UTMs to not be captured in the BigQuery export. This causes all of our paid search data to come in as:
+
+
+* Source: google
+* Medium: organic
+* Campaign: (organic)
+
+Thus, this traffic would be categorized under the Organic Search channel instead of Paid Search. We have applied logic to change these values to google/cpc/Unknown if a gclid is present in the collected_traffic_source columns, which fixes things at the channel level. However, there doesn't seem to be a solution for grabbing the campaign/UTM information within the GA4 export. I checked the data to see if we could grab this information from the UTMs in the URL (query attached). However, it appears that campaigns that are auto-tagged in Google Ads are not populating UTMs at all.
+
+In order to get the campaign info for past data, the (theoretical) solution I see is to export Google Ads data so we can map the gclid to the UTMs associated with it. That is assuming that gclid and UTM info have a 1:1 relationship. I'm not sure how data is structured on the Google Ads side. Furthermore, this would require us to export the Google Ads data somehow. This can either be done through a third party (like Stitch), which we will have to foot the bill for, or with our own development resources through the Google Ads API, which will cost us time and effort.
+
+Having Paid Search attribution down to the campaign/UTM level is essential for several business processes we rely on, so any advice you have on other ways to rectify this issue or information on Google's plans to fix it are appreciated. Please let me know if you have any questions with this or if you need any more information to move forward on a solution. Thanks in advance.","I have received word back from Google in regards to the Click ID widening as well as the iOS issue they brought up:
+
+1. Click Widening:
+
+Click ID Widening was the top requested feature in our Global Product Prio Process so will be prioritized and worked on as part of the ""Channel Groups export in BQ"" feature. However, it has not yet been fully evaluated and added to the roadmap so it is still TBD but I'd say it will probably come sometime H1, maybe Q1 since it's the top request
+
+Once they have determined the route to upgrade, they will update their internal roadmap and share it with us. We can send this update over to you once we receive it!
+
+
+2. iOS Issue:
+
+Google Product Team is working with the Ads team to make ""gbraid/wbraid"" support possible (iOS 14) 
+
+So much less of a break and just more about the recent iOS version update that removes the URL parameters sent over by links. [Analytics Help] Updates to iOS 14+ campaign measurement
+
+I hope this information helps!","Our Paid Search data in BigQuery is misattributed to Organic due to a known bug. While we fixed channel level issues, campaign/UTM data is missing. We need a way to retrieve past campaign data, either via Google Ads export (costly) or API (time-consuming). We need a fix or info on Google's plan to address this critical issue.","Click ID Widening:
+
+Good news! It's a top priority and likely coming in H1 2024 (possibly Q1) as part of the ""Channel Groups export in BQ"" feature.
+Timeline is still tentative, but expect an update from Google once they solidify the plan.
+iOS Issue:
+
+Google is actively working on implementing ""gbraid/wbraid"" support for iOS 14 to address the URL parameter loss.
+It's not a complete fix, but it should improve measurement capabilities.
+Overall:
+
+Both issues are being addressed, with progress and potential solutions in the near future."
+"""00001633""","Our customer engagement team has reported they are not seeing traffic from some European countries in their GA data. When I tested with one of my London colleagues, we see the attached ""Refused to connect"" error. Do you know what's causing this and how we can fix?
+
+We launched the new customer support site earlier this month. I believe Google Analytics was implemented via a Salesforce connector in this case.
+
+I've given support-team@searchdiscovery.com<mailto:support-team@searchdiscovery.com> access to the property below:
+
+Property: 371905174
+Property Name: Customer Zone
+url: https://customerzone.ap.org/cz/s/","It looks like the Content Security Policy is refusing to connect to the GA source. This article has details on allowing GA in your CSP.
+
+link to article: https://developers.google.com/tag-platform/security/guides/csp#google_analytics_4_google_analytics","
+European traffic missing in Google Analytics for new customer support site. We see ""Refused to connect"" error, likely due to Salesforce connector implementation. Can you help diagnose and fix the issue?","It looks like the Content Security Policy is refusing to connect to the GA source. This article has details on allowing GA in your CSP.
+
+link to article: https://developers.google.com/tag-platform/security/guides/csp#google_analytics_4_google_analytics"
+"""00001640""","Hello,
+
+We have an issue with one of our clients where we've identified a great
+amount of duplicate transactions that are inflating conversion rate and
+revenue. We've identified and fixed the cause of this, but the data is
+still present in Google Analytics.
+
+We'd like to know if there's any way to remove this data from GA. Data
+Deletion does not seem to be a viable option, and we can't issue ""refunds""
+to these events as dupes have the same transaction ID as the original
+purchases.
+
+Is there any way to remove these so that they are not reported on?","Google does require that a transaction ID be passed with a user identifier (user id, google signals, client id, etc). If this is not followed, then duplicate transactions will be counted. If your transactions are accompanied by a user identifier, then GA4 will automatically dedupe these transactions in the UI.
+
+[Help Article] Minimize duplicate conversions with transaction IDs: https://support.google.com/analytics/answer/12313109?hl=en#:~:text=You%20must%20add%20a%20transaction,with%20the%20same%20transaction%20ID.
+
+In regard to removing transactions, these transactions at the time of purchase will remain in the system. As this is not a transactional database but a behavioral database, deleting these transactions is not possible. They do have the refund capability for this purpose, but making sure a system is set up to properly send data to GA4 in relation to transactions is how to prevent this issue.
+
+If the issue has been fixed, that is great! If you are doing any reporting outside of GA4 (e.g. pulling data from BQ), you can add logic into your queries to pull unique transaction IDs to properly report on revenue from there.
+
+I wish there was better news here, however, the Google team has recommended the above preventative measures due to the fact that removing these data points is currently not available.
+","
+Our client has inflated GA data due to duplicate transactions. The cause is fixed, but we can't delete or refund the duplicates because they share IDs with originals. Can we somehow remove them from GA reporting?","To avoid duplicate transactions in Google Analytics 4:
+
+Always send a unique transaction ID with each purchase event.
+Make sure your system properly sends transaction data to GA4.
+Use refunds within GA4 to correct mistakes (not to entirely remove transactions).
+If reporting outside GA4, use query logic to filter for unique transaction IDs.
+Remember: Deleting transactions is not possible in GA4, so prevention is key.
+
+Minimize duplicate conversions with transaction IDs: https://support.google.com/analytics/answer/12313109?hl=en#:~:text=You%20must%20add%20a%20transaction,with%20the%20same%20transaction%20ID."
+"""00001873""","Hello,
+
+I am working on testing custom variables that our developers have created which have been sent along with their corresponding custom events. We are using a non GTM implementation, so hard coded custom events and variables and I cannot find a spot in GA4 that shows those custom variables that are getting sent along with the events. (I can see the events) I am also curious on the relationship between custom events, dimensions, metrics, and variables.
+
+Thanks for your help,","Debug Mode will be your friend when trying to confirm if PARAMETERS are being sent with your events (specifically the gtag method):
+
+https://support.google.com/analytics/answer/7201382?hl=en#zippy=%2Cgoogle-tag-gtagjs
+
+You can also visit your ""Events"" report and click on an event to be taken to an in-depth Event report (although this method can sometimes not show some parameters being sent).
+
+Path to Events: Reports (left nav) ==> Engagement ==> Events ==> Click on the event name you wish to investigate.
+
+In regard to custom events, dimensions, metrics, and variables, I think we can help there.
+
+First, let's switch to using ""parameter"" from ""variables"", it will help the conversation a little bit (hence me using parameters above). Parameters are sent with a custom event and simply carry values to GA4. A custom event is just any other event that is not an automatic event or recommended event.
+
+In the GA4 UI, Dimensions and Metrics are what are used in your reports. A custom parameter must be upgraded into a custom dimension or metric to be used in reporting (you cannot simply use a parameter and add it to a report). 
+
+Once you upgrade a parameter in the GA4 UI to a custom dimension or metric, you will be able to add them to your reports as expected.
+
+If you are using BQ for your reporting, you will see the parameters available with each event (there is not the concept of dimensions or metrics in BQ, just values that you can use as you see fit).","Can't find custom variables sent with custom events in non-GTM GA4 setup.
+Seeing events, not variables. Confused about dimensions, metrics, and variable roles.
+Need help understanding custom event data flow and relationships.","Use Debug Mode to confirm parameter transmission (especially for gtag events).
+Check the Events Report for detailed event data (may not show all parameters).
+Remember: Parameters (data you send) need to be upgraded to custom dimensions or metrics (used in reports) in GA4 UI.
+BigQuery shows all parameters, no need for upgrading.
+
+https://support.google.com/analytics/answer/7201382?hl=en#zippy=%2Cgoogle-tag-gtagjs"
+,,,"I can't find the custom variables I sent with my custom events in my non-GTM GA4 setup. I only see the events, not the variables. I'm confused about the difference between dimensions, metrics, and variables, and how they relate to custom event data.","I understand your confusion. Here's how to troubleshoot and understand your custom event data:
+
+1. Debugging Parameter Transmission:
+
+Debug Mode: Check if parameters are being sent with your events using Debug Mode. This is especially helpful for the gtag method.
+Events Report: Click on a specific event in the Reports > Engagement > Events section. This can sometimes show parameters.
+2. Custom Parameters vs. Dimensions and Metrics:
+
+Use ""parameter"" instead of ""variable"": Parameters are sent with events and hold values. Custom events are any events besides automatic or recommended ones.
+Dimensions and metrics for reporting: In GA4 UI, you use dimensions and metrics to build reports. Parameters need to be upgraded to custom dimensions or metrics before you can use them in reports.
+BigQuery: In BigQuery, you'll see all parameters for each event (no dimensions or metrics concept, just raw values).
+Additional tips:
+
+Upgrade relevant parameters: Choose parameters you want to report on and upgrade them to custom dimensions or metrics in the GA4 UI.
+BQ queries: Use query logic in BigQuery to filter and analyze specific parameters based on your needs.
+Remember, preventing duplicate transactions is crucial. If you have any further questions or need specific help with your setup, feel free to ask!
+
+Note: I adjusted the answer slightly to better address your specific questions about custom variables and data flow.
+
+https://support.google.com/analytics/answer/7201382?hl=en#zippy=%2Cgoogle-tag-gtagjs"
+"""00001631""","We had a couple GA4 questions pop up this week, hoping we can use these as part of our monthly support hours. If not, let me know the best avenue to get support.
+
+72-hour BigQuery update. This documentation is a bit a confusing to me: https://support.google.com/analytics/answer/9358801?hl=en#:~:text=Daily%20export%20tables,a%20processing%20error. I’m trying to understand if the 72-hour update just inserts delayed records, or if it also makes updates to existing records. This will affect how we architect our pipelines from BQ to Snowflake and downstream reporting tables. Does SDI have any context on this?
+ 
+
+We are in the process of redirecting our app data to our web property. Max Keeler (cc’ed) is in charge of app development. He has some questions regarding the impact to Firebase:
+ 
+
+Our Unity app uses Firebase as a backend for data, storage and push messaging. We’ve also configured Firebase Analytics (aka GA4) with the same project info. As our company matures, we’d like to combine our website usage analytics data with our mobile app analytics via data streams.
+
+ 
+
+Currently we are using a separate GA4 account that has 4 data streams for the different app instances. We would like to update this to reflect our consolidated/production GA4 account that Hannah and Sam have been working on. This will allow us to combine our app and website and server data under a single roof, which is the overall aim.
+
+ 
+
+These data streams cover both Google play and IOS applications and have two data streams each. Sam has replicated the data streams that we had on the separate GA4 account in the production account, but we are wondering the best way to integrate our app data while retaining the configuration for our existing Firebase project?
+
+ 
+
+Please let us know if you need more context.","The 72-hour update window in BigQuery refers to the potential delay for data processing. While data usually arrives within 24 hours, it can take up to 72 hours in rare cases with massive data volumes requiring extra processing power for source and user attribution.
+
+Therefore, the update:
+
+Typically only adds new records from the previous day.
+May occasionally adjust existing data if errors or late events require reprocessing after initial import.
+This means you can generally design your pipeline assuming new data additions. However, it's prudent to handle potential updates to existing records, such as by using BigQuery's built-in partitioning and merge functionality.
+
+If you're particularly concerned about data freshness or unexpected updates, consider:
+
+Monitoring BigQuery export status to track data arrival times.
+Implementing data validation checks after import to identify any discrepancies.
+I hope this clarifies the potential impact of the 72-hour update and helps you build a robust data pipeline.",BigQuery 72-hour update: Does the update only add new records or also adjust existing data? This is crucial for pipeline architecture to Snowflake and downstream reporting.,"BigQuery updates mostly add new data (up to 72 hours old). It rarely changes existing data. You can build your pipeline for new data, but be prepared to handle occasional updates to existing records just in case."
+"""00001637""",looks like it may be capturing incorrect Total and Revenue amounts.  They also use Shopify. Can you look into this?,"Looks like Spotify integration, so they will need whoever manages that to help. 
+
+They deleted a GA4 purchase tag in GTM and noted it was being done directly in Shopify
+
+If it can't be tweaked on the Shopify side, you can probably make a custom metric that combines Total Revenue with Tax and Shipping metrics.",Are Shopify transactions in Google Analytics 4 showing incorrect total and revenue amounts compared to Shopify itself or another source?,"It could be a Spotify integration issue or a missing GA4 tag
+Solution options:
+
+Check if the Shopify integration needs fixing.
+If not, create a custom metric in GA4 combining Total Revenue with Tax and Shipping.
+"
+"""00001635""","Quick question about what we can expect when Google deprecates UA in 2024. I've seen several conflicting things online about how things will work post-June 2024 and wanted to clarify so we're setting the right expectations internally.
+
+We obviously know that data will stop collecting after 6/30/24, but will users still be able to log in and access standard/custom reports in UA as they do today after the deprecation date? Or will Google cut off access to the UA interface entirely, leaving BigQuery the only option for retrieving UA data?
+
+Thanks in advance for your help!","According to what was discussed in our Partner summit a couple of months ago, Universal Analytics will be turned off completely with the inability to access the UI, API, or anything else related to UA outside of the data in BQ (which is yours). As of now, we have not heard of this being any different and have been functioning with the expectation that this will not change. 
+
+We have created a service here to assist clients with their needs around combining their UA data with GA4 data to help teams retain their YoY data in a single source in preparation for the sunset of UA in July 2024. Our GA4 Activation Service Bundle is designed to ensure you securely, efficiently and intelligently utilize your new GA4 data to inform your business decisions and solve critical challenges:
+ 
+
+• Merge UA and GA4 data in BigQuery to enable consistent tracking and YoY comparisons
+• Process, transform, and aggregate your GA4 data for use in BI tools and other systems
+• Ensure existing downstream BI/analytics reporting isn’t interrupted
+• Build trust in your data with tools/reports to identify when tracking breaks
+• Onboard your team quickly with professional training resources
+
+
+This service includes:
+
+• Configure the GA4 + BigQuery integration
+• Translate historical UA data to the new GA4 data model in BigQuery
+• Configure and orchestrate our dbt model to process GA4 data
+• Create standard Data Quality validation reports to ensure parity/accuracy
+• Google Analytics 4 OnDemand training to support team knowledge","After June 30, 2024, will users still be able to access standard/custom reports in Universal Analytics (UA) or only through BigQuery?","based on the information from the Partner summit, Universal Analytics (UA) will be completely turned off, and your service is designed to assist clients in combining UA data with GA4 data for consistent tracking and YoY comparisons. The GA4 Activation Service Bundle includes configuring the GA4 + BigQuery integration, translating historical UA data to GA4 data, processing GA4 data with dbt models, creating data quality validation reports, and providing Google Analytics 4 OnDemand training for team support."
+"""00001632""",It looks like the recommended solution of adding google analytics to our payment pages may not be possible.  Is there an alternative solution we can explore?," If adding GA to the page is not possible, then your next option is to import your events as ""offline events"" into Google Analytics:
+
+[GA4] Import offline events: https://support.google.com/analytics/answer/10325025?hl=en
+
+This will require you and your team to follow the requirements for the upload daily (manually, python application, SFTP, etc.)
+
+You will want to make sure that you are somehow passing your session id and client id from your site to the payment portal (via query params or some sort of back-end method if possible), at store that information with your transactions.",Can't put GA on payment pages. Alternatives for tracking purchases?,"Upload purchase data manually as ""offline events"" in GA4. Requires daily uploads & passing user IDs from your site to the payment portal.
+
+In short: Instead of real-time tracking, you manually upload purchase data every day.
+
+Note: This requires some technical setup and ongoing maintenance.
+
+https://support.google.com/analytics/answer/10325025?hl=en"
+"""00001628""","I would like to know what is considered proper implementation for creating custom events within GA4 for apps that have those custom events hardcoded into them. I have attached a screenshot of the GA4 interface used for creating custom events, but I cannot see how there would be any connection between the event I create in GA4 and the hardcoded one that was created in the app by developers. Note that we are not using GTM for this implementation.","Creating an event in GA4 just creates an event using other events + parameter combinations. This feature is to be used if you are sending one event (e.g. artcile_view) but want to create a more specific event based on the information passed with that event (e.g. creating an event called article_view_premium where the original event was ""article_view"" and the parameter ""type"" is equal to ""premium"").
+
+Sending any event from your app (e.g a custom event name ""super_cool_event_for_lead_gen"" would automatically be seen in GA4 and requires no additional settings to see. The only update to GA4 you will need to do is create and additional custom dimension/metrics you wish to use in your reports in the GA4 UI that are being sent with that event.\
+
+More information on creating and modifying events in GA4 can be found here: https://support.google.com/analytics/answer/10085872?hl=en","Can't add Google Analytics to our payment pages, but need to track events there. Alternatives?","You can send custom events directly from your app (e.g., ""super_cool_event_for_lead_gen""). GA4 will automatically see them without needing additional settings. Just create custom dimensions/metrics in GA4 for specific data you want to track.
+
+Basically: No GTM needed, just send events directly from your app and add relevant metrics/dimensions in GA4 for reporting.
+
+More info: https://support.google.com/analytics/answer/10085872?hl=en"
+"""00001619""",,,"Could you please update this new property to 360 for the upcoming new
+brand site?","Sales Partners can set the service levels of properties for their clients. Sales Partner clients and Direct clients can set the service levels of their own properties. To set the service level of a property:
+
+Sign in to Google Marketing Platform.
+Click Administration > Organizations.
+Click the relevant organization.
+Sales Partner: Click Clients, then click a client name. Under Linked accounts, select Analytics, then the specific account.
+Client: Under Linked accounts, select Analytics, then the specific account.
+Select the check box for the Google Analytics 4 property you want to upgrade/downgrade.
+Click More, then click Upgrade selected properties"
+"""00001344""",,,Please assist with downgrading the following properties from 360 to standard.,"Preparation:
+
+Unlink the 360 property from roll-ups and other Google products.
+Create a temporary Google Analytics account.
+Contact Google Support to request the downgrade.
+Moving Properties in Google Analytics:
+
+Access Admin settings, locate the 360 property, and go to Property Settings.
+Initiate the move to the temporary account.
+Managing in Google Marketing Platform:
+
+Access GMP > Administration > Search Discovery > Clients.
+Locate the client, go to Analytics, find the temporary account.
+Unlink the account and remove user groups.
+Finalizing in Google Analytics:
+
+Access Admin settings, locate the temporary account, and go to Property Settings.
+Move the property to the final destination account.
+
+Remember the support team has FAQ docuemnents that walks through this process in more detail:
+https://docs.google.com/document/d/1pF36mbD5rsaQSoMwEM0u2Rax35HPQyy1SzQki8PXHM0/edit"
+"""00001346""","Do we have any guidance on how to best avoid or minimize GA4 Token usage within Looker Studio?
+ 
+A non-GA360 service level client reached out late last week and reported an issue related to quota errors appear on their Looker Studio Dashboard
+ 
+I sent the client some information related to the changes that took place in November, along with links about the Quota Limits and Troubleshooting any quota limit errors that may be encountered, but they are concerned at having hit the quota limits without having done very much editing or viewing of Looker information in that work session.
+
+Please let me know if you need any additional information to help with this request.","Currently, there is no update to the way Looker Studio pulls data from GA4 into LS.
+
+The reason token limits are hit is often times due to the intractability of the dashboard, meaning that when changes are made then the report needs to refresh (e.g. re-download) the data, increasing their token usage for the day. They can prevent this by making dashboards that minimizes cardinality, or reduce the number of ways the user can manipulate the data.
+
+
+There is also the case to use the ""extract"" feature as well as begin looking at pulling data from BQ instead of GA4 UI.
+
+There is a section in your ""Troubleshooting"" article that is pretty straight forward, and essentially it suggests that if you are running an enterprise level business (with the need for more tokens due to their size), that they should consider GA360 (especially at its new price point):
+
+ 
+
+First, use owner's credentials for the data source instead of viewer credentials to increase the likelihood of using cached data instead of querying data and using quota tokens. If you are relying on viewer's credentials, consider switching to owner's.
+If your reports use multiple Google Analytics 4 data sources, consider consolidating them if possible into a single reusable data source. This will also increase the likelihood of using cached data instead of querying data and using tokens.
+Reduce the traffic to the report. Consider sharing the report with fewer people, and don't embed the report in a high traffic website.
+Reduce the number of charts on each page.
+Extract the Google Analytics 4 data and use the extracted data instead of the Google Analytics 4 data source.
+Note: you'll need to wait until any exceeded quotas have refreshed before you can extract the data. Depending on the quota exceeded, this can take up to 24 hours.
+Export your Analytics data to BigQuery, then use the BigQuery connector to visualize that data in Looker Studio. 
+Upgrade to Analytics 360.
+Consider using a partner connector.
+Not sure if this really helps, but I think you gave them all the tools they need to understand what needs to happen next!",How did the non-GA360 client hit the GA4 token usage limit with minimal Looker Studio activity?,"Interactive dashboard elements often trigger data refreshes, consuming tokens. Minimize dashboard interactivity and cardinality (number of ways data can be manipulated) to reduce refreshes."
+"""00001346""","Do we have any guidance on how to best avoid or minimize GA4 Token usage within Looker Studio?
+ 
+A non-GA360 service level client reached out late last week and reported an issue related to quota errors appear on their Looker Studio Dashboard
+ 
+I sent the client some information related to the changes that took place in November, along with links about the Quota Limits and Troubleshooting any quota limit errors that may be encountered, but they are concerned at having hit the quota limits without having done very much editing or viewing of Looker information in that work session.
+
+Please let me know if you need any additional information to help with this request.","Currently, there is no update to the way Looker Studio pulls data from GA4 into LS.
+
+The reason token limits are hit is often times due to the intractability of the dashboard, meaning that when changes are made then the report needs to refresh (e.g. re-download) the data, increasing their token usage for the day. They can prevent this by making dashboards that minimizes cardinality, or reduce the number of ways the user can manipulate the data.
+
+
+There is also the case to use the ""extract"" feature as well as begin looking at pulling data from BQ instead of GA4 UI.
+
+There is a section in your ""Troubleshooting"" article that is pretty straight forward, and essentially it suggests that if you are running an enterprise level business (with the need for more tokens due to their size), that they should consider GA360 (especially at its new price point):
+
+ 
+
+First, use owner's credentials for the data source instead of viewer credentials to increase the likelihood of using cached data instead of querying data and using quota tokens. If you are relying on viewer's credentials, consider switching to owner's.
+If your reports use multiple Google Analytics 4 data sources, consider consolidating them if possible into a single reusable data source. This will also increase the likelihood of using cached data instead of querying data and using tokens.
+Reduce the traffic to the report. Consider sharing the report with fewer people, and don't embed the report in a high traffic website.
+Reduce the number of charts on each page.
+Extract the Google Analytics 4 data and use the extracted data instead of the Google Analytics 4 data source.
+Note: you'll need to wait until any exceeded quotas have refreshed before you can extract the data. Depending on the quota exceeded, this can take up to 24 hours.
+Export your Analytics data to BigQuery, then use the BigQuery connector to visualize that data in Looker Studio. 
+Upgrade to Analytics 360.
+Consider using a partner connector.
+Not sure if this really helps, but I think you gave them all the tools they need to understand what needs to happen next!",Is there any specific dashboard functionality or element causing high token consumption?,"Interactive elements like filters and dynamic charts often require data refreshes, increasing token usage."
+"""00001346""","Do we have any guidance on how to best avoid or minimize GA4 Token usage within Looker Studio?
+ 
+A non-GA360 service level client reached out late last week and reported an issue related to quota errors appear on their Looker Studio Dashboard
+ 
+I sent the client some information related to the changes that took place in November, along with links about the Quota Limits and Troubleshooting any quota limit errors that may be encountered, but they are concerned at having hit the quota limits without having done very much editing or viewing of Looker information in that work session.
+
+Please let me know if you need any additional information to help with this request.","Currently, there is no update to the way Looker Studio pulls data from GA4 into LS.
+
+The reason token limits are hit is often times due to the intractability of the dashboard, meaning that when changes are made then the report needs to refresh (e.g. re-download) the data, increasing their token usage for the day. They can prevent this by making dashboards that minimizes cardinality, or reduce the number of ways the user can manipulate the data.
+
+
+There is also the case to use the ""extract"" feature as well as begin looking at pulling data from BQ instead of GA4 UI.
+
+There is a section in your ""Troubleshooting"" article that is pretty straight forward, and essentially it suggests that if you are running an enterprise level business (with the need for more tokens due to their size), that they should consider GA360 (especially at its new price point):
+
+ 
+
+First, use owner's credentials for the data source instead of viewer credentials to increase the likelihood of using cached data instead of querying data and using quota tokens. If you are relying on viewer's credentials, consider switching to owner's.
+If your reports use multiple Google Analytics 4 data sources, consider consolidating them if possible into a single reusable data source. This will also increase the likelihood of using cached data instead of querying data and using tokens.
+Reduce the traffic to the report. Consider sharing the report with fewer people, and don't embed the report in a high traffic website.
+Reduce the number of charts on each page.
+Extract the Google Analytics 4 data and use the extracted data instead of the Google Analytics 4 data source.
+Note: you'll need to wait until any exceeded quotas have refreshed before you can extract the data. Depending on the quota exceeded, this can take up to 24 hours.
+Export your Analytics data to BigQuery, then use the BigQuery connector to visualize that data in Looker Studio. 
+Upgrade to Analytics 360.
+Consider using a partner connector.
+Not sure if this really helps, but I think you gave them all the tools they need to understand what needs to happen next!",Are there any best practices or optimizations to minimize future token usage in Looker Studio reports?,"Use owner's credentials for data sources to increase cached data usage.
+Consolidate multiple GA4 data sources into one.
+Reduce report traffic and embeds.
+Minimize charts per page.
+Extract GA4 data and use it directly instead of live connections.
+Export data to BigQuery and visualize it from there.
+Consider upgrading to GA360 for higher token quotas.
+Explore partner connectors for alternative data access methods."
+"""00001352""","We're currently in the middle of migrating from using Heap to Google Analytics 4; BigQuery Export is part of our new pipeline to extract our raw, granular onsite data for later use. With our setup with Heap, we track IPs of each individual session. My question is whether or not we're allowed to do this in Google Analytics 4 and/or BigQuery? 
+ 
+I understand we are not able to track PII data points like emails, addresses, and names. Are IPs under the same constraints as these? We wouldn't be surfacing this in GA, but rather tracking them in the dataLayer and Google Tag Manager to have them available in our BigQuery export.
+ 
+Just want to make sure we're being compliant with GDPR and other related rules & regulations!","In regards to IPs, Google interprets IPs and excludes them as PII:
+
+https://support.google.com/analytics/answer/7686480?hl=en
+
+However, storing these in GA4/UA can open you up to other policy breaches such as GDPR, CCPA, etc. that would prevent you from storing this data/forcing you to remove the data.
+
+In regards to BQ side, you are able to store PII in this environment as the restrictions on STORING information are not impacted by policies, but COLLECTING the information may still be subject to policies that are put into place to protect PII.
+
+The overall outcome would be: You can collect IP addresses in GA/BQ without Google classifying the IP as PII, however, the IP address is considered PII among other policies so it is CRITICAL that your policy management software is configured correctly to assure data (including IPs) are only capture when it complies with other policies.
+
+Please review and let me know if you have any additional questions.","Can we track individual session IPs in Google Analytics 4 and BigQuery, similar to our setup in Heap, while maintaining GDPR and other regulatory compliance?","Google's stance: Google doesn't classify IPs as PII in GA4/UA, but storing them could conflict with GDPR, CCPA, etc.
+https://support.google.com/analytics/answer/7686480?hl=en
+
+BigQuery storage: BQ can store PII, but collection might still be subject to privacy policies.
+
+Compliance considerations:
+Configure policy management software to ensure IP collection aligns with regulations.
+Consider potential GDPR/CCPA conflicts before storing IPs in GA4/UA.
+
+Key takeaway: While technically possible to collect IPs in GA4/BQ, exercise caution and ensure compliance with applicable privacy regulations."
+"""00001349""","Are there additional costs associated with adding rollup properties to GA4 accounts?
+ 
+Lacy, our client over at HCA, stumbled upon some information in regards to pricing for rollup properties. She read somewhere that there would be additional costs associated with adding new rollup properties. I told her I would reach out to gain clarity around the rollup properties and any additional costs they need to be aware of. Can you please advise?","With any sub-property or rollup property, events sent to either version will be counted as 0.5 events. Example:
+
+Source property: 1000 events
+sub-property receives 200 events due to filter
+total billable events: 1100 events (1000 from source and 200x0.5 from sub).
+
+This information can be found here under the ""Create a Sub-property"" section: https://support.google.com/analytics/answer/11526072?hl=en","
+Are there additional costs associated with adding rollup properties to GA4 accounts?","Yes, there are cost considerations when using rollup properties. Each event sent to a rollup property counts as 0.5 events for billing purposes. This applies to both events directly sent to the rollup and events inherited from source properties.
+
+Example:
+
+Source property: 1000 events
+Rollup property receives 200 events due to filtering
+Total billable events: 1100 (1000 from source + 200 x 0.5)
+Key takeaway: Rollup properties offer functionality but increase your GA4 billing by counting events as half their value.
+
+Additional resources:
+
+Google Analytics Help: https://support.google.com/analytics/answer/11526072?hl=en"
+"""00001349""",I guess my question is -- will it be a wash in terms of costs -- since we are basically moving properties from one place -- into another? So they all WERE in another group rollup -- and now they're in this new one and NOT the other group? In theory there's no NET NEW anything? Am I understanding correctly? ,"Billing will not be impacted if the change is just moving one source property + filter combination from one roll-up to another.
+
+Yes, that makes sense. If they are UNLINKNG one property + filter combination form a roll-up and then LINKING that property + filter combination to another roll-up, then the billing should not change as its the same configuration. The billing would only change if they were to adjust how the source property receives data (which it sounds like they are changing).","Will moving properties from one rollup to another impact billing, or will it be a wash since the properties and filters remain the same?","No, moving properties and filters between rollups without changing their configuration won't affect billing. Costs are based on the number of events sent to rollups, regardless of which specific rollup they're in. So, if the properties and filters stay the same, the number of billable events remains the same.
+
+Key points:
+
+Billing is tied to events sent to rollups, not the rollups themselves.
+Moving properties and filters without altering their configuration doesn't change event volume.
+Costs would only change if the way source properties receive data were modified."
+"""00001340""","We had a question related to Big Query and GA4.  The team is looking at data from each source and sometimes they tie out and sometimes there is a ~5% variance.  We have been looking at session data.
+ 
+Do you have any insight on this variance? We assume there is some type of performance algorithm that optimizes the data displayed in the GA4 UI vs pure raw data in BQ. ","With the way GA4 manipulates the data for the UI and the BQ data being in its raw form, there will naturally be some variance when comparing the data sets. a ~5% variance is actually a pretty solid variance and sits around a very acceptable percentage. the ga4bigquery.com site does a pretty good summation of things that may impact the difference and can be reviewed here: 
+
+https://www.ga4bigquery.com/why-your-bigquery-results-dont-exactly-match-with-the-google-analytics-reports/
+
+In regards to the data you are comparing, is this related to the session_start + page_view event issue from the other thread?
+
+Please review and let me know your thought!",What causes the approximately 5% variance in session data between BigQuery and GA4 reports?,"GA4 adjusts data for UI display, while BigQuery stores it in raw form.
+
+A 5% variance is common and acceptable.
+
+For more details:
+
+Refer to this resource: https://www.ga4bigquery.com/why-your-bigquery-results-dont-exactly-match-with-the-google-analytics-reports/"
+"""00001340""","We had a question related to Big Query and GA4.  The team is looking at data from each source and sometimes they tie out and sometimes there is a ~5% variance.  We have been looking at session data.
+ 
+Do you have any insight on this variance? We assume there is some type of performance algorithm that optimizes the data displayed in the GA4 UI vs pure raw data in BQ. ","With the way GA4 manipulates the data for the UI and the BQ data being in its raw form, there will naturally be some variance when comparing the data sets. a ~5% variance is actually a pretty solid variance and sits around a very acceptable percentage. the ga4bigquery.com site does a pretty good summation of things that may impact the difference and can be reviewed here: 
+
+https://www.ga4bigquery.com/why-your-bigquery-results-dont-exactly-match-with-the-google-analytics-reports/
+
+In regards to the data you are comparing, is this related to the session_start + page_view event issue from the other thread?
+
+Please review and let me know your thought!",Is this variance due to a performance algorithm or data processing differences between BigQuery and GA4's UI?,"GA4 adjusts data for UI display, while BigQuery stores it in raw form.
+
+For more details:
+
+Refer to this resource: https://www.ga4bigquery.com/why-your-bigquery-results-dont-exactly-match-with-the-google-analytics-reports/"
+"""00001354""","How can my role be upgraded to include Administrator on our Tag Manager accounts? I am an Org User Admin. The Marketing Platform lists all of our Tag Manager accounts, however, without Administrator access the accounts cannot be seen nor accessed in Google Tag Manager to manage the users. When trying to change the role to Administrator for myself or another Org User Admin the action fails. Please advise.","In regards to access beyond ORG ADMIN in GTM, you will need to be added as a PUBLISHER by an ADMIN in each of the GTM containers you have in your GTM account (or granted ADMIN rights at the GTM account level at which point you can grant yourself PUBLISH rights at the container level). Once you have that access at the individual container/account level, you will be able to grant PUBLISH access to others from the GMP console moving forward.",I'm an Org User Admin but can't access Tag Manager accounts in Google Marketing Platform. How do I get Administrator access there?,"You need to be added as a PUBLISHER to each container in your GTM account by an existing ADMIN. Alternatively, you can be granted ADMIN rights at the GTM account level and then add yourself as a PUBLISHER to each container.
+
+Once you have PUBLISH rights at the container/account level, you'll be able to manage those permissions for others from GMP."
+"""00001358""","I recently connected with Gavin Chui from Merriam-Webster, Cc'ed here. He informed me of an issue he's experiencing regarding expanding the date range in New GA360. 
+ 
+For example, when he expands the data date range to show the last twelve months he cannot go back past November 11, 2022. 
+ 
+Could you please work with Gavin to troubleshoot?","Can you confirm this property is 360 enabled (360 flag next to name). I can confirm on my end if you sent the above also.
+
+Once your property has been 360 enabled (if it was not before), you will want to follow these steps in the following link to extend your Data Retention period for your custom reports:
+
+https://support.google.com/analytics/answer/11202874
+
+Admin ==> Property Column ==> Data Setting ==> Data Retention
+
+Set to ""50 months""
+
+Please note, that this is not a retroactive adjustment and will only start allowing data to be viewed in your custom reports (e.g. explorations) from the date you change this.
+
+You will, however, be able to view your data BEFORE your date range in the standard reporting (e.g.Reports on the left navigation).
+
+Please let me know the above information (or if you were able to successfully update the settings).","I'm having trouble expanding date ranges beyond Nov 11, 2022 in New GA360. Can you help troubleshoot?","1. Verify 360 enablement:
+
+Check if the property has the 360 flag. If not, enable it.
+2. Extend data retention:
+
+Follow these steps to extend the data retention period for custom reports:
+Go to Admin > Property > Data Settings > Data Retention.
+Set it to ""50 months.""
+3. Note limitations:
+
+This adjustment isn't retroactive. It only affects data from the change date onwards in custom reports.
+You can still view older data in standard reports."
+"""00001338""","We are unable to see some custom dimensions in GA4 reports and are not sure why, or how to fix.  Can you assist please?
+
+ 
+
+The dimensions we are having issues with are currently being set in config.  Here are the parameter/dimension names we are having issues with: AP_Org_ID, AP_Org_Type, AP_Org_Cat, AP_User_Id, AP_EventTime 
+
+ 
+
+For some events, we are explicitly setting these parameters with the event rather than via config; the explicitly set parameters do seem to be coming through in reporting.
+
+","Hello!
+
+It looks like the config setting is being fired twice:
+
+Can you confirm when and where both instances are firing? Im guessing the one you are setting the values is easy to find but the second instance (the one that is firing first) my be preventing you from re-configuiring the SAME measurement ID due to race conditions. If you can take a look at your CMS and determine if there is an additional location where GA/GTAG is being set then it may be a good idea to attempt to disable the one that is NOT sending the information you need and give it another shot.
+
+Let me know if you are able to locate that rogue gtag/google product that is firing before the one you want and then let me know if it has been paused/removed and I can check again!
+
+Thank you!
+","Why are some custom dimensions not showing up in GA4 reports, even though they're set in config?","Check to see if the issue is being caused by the config setting being fired twice.
+
+To fix it:
+
+Identify duplicate instances:
+
+Check your CMS for multiple GA/GTAG settings.
+Determine which one is sending the correct information.
+Disable the incorrect instance:
+
+Pause or remove the one that isn't sending the necessary data.
+Retest:
+
+After disabling the duplicate, check if the custom dimensions appear in reports."
+"""00001369""","I received a question from another Fool that I’m wondering if you could help point me in the right direction on. I know we have our annual contract with SDI, but am wondering if we should also have one directly with Google for GA? And if so, would you manage that, or is that something we’d have set up with Google directly?
+
+ 
+
+Specifically, I’m interested in the language around Google’s sharing of our data with other Google entities.
+
+ 
+
+Apologies for the likely dumb question, and one I should probably know the answer to already lol – appreciate your help!","Further does not own any data as we are official resellers and partners of Google. Where are other agencies may OWN your data (e.g. they have their own GA360 license and they build your accounts/property structure under their own GMP Organization), Further and Google generate your OWN Organization (Link to GMP Organization). This means that at no point is your data own by Further and is owned by your organization.
+
+Having multiple licenses is not advised if your business interacts across the board. Having two licenses will end up costing you more as the number of events you collect in each license will be applied at the lower tier (higher cost per million events) instead of having all accounts together and being billed all together (higher tier = less per million at each tier).",Should we have a separate Google Analytics contract alongside our Further contract?,"No, there's no need for both. Here's why:
+
+Data ownership: Further doesn't own your data, unlike some agencies. You have your own Google Marketing Platform organization and own your data directly.
+
+Cost efficiency: Multiple licenses increase costs as event volume is billed at lower tiers in each, resulting in a higher cost per million events. One combined license gets you higher tiers and lower costs overall."
+"""00001357""","
+I am trying to figure out how and where to configure api calls in the product code in order to pull back the custom variables/parameters per call?  This is what we have done so far....
+ 
+Configured 'GA4 - api_call' event in GA4 property. You can see the event parameters that can be collected as part of the api call event below (currently there is nothing mapping to them so they are all showing '(not set)').  What I need to understand is where does a FE configure those parameters in the code (example of code provided) so that it pulls back those details per api call?
+
+Here is an example event I am trying to duplicate in GA4:
+ec: API Calls
+ea: Forms- Health Care
+el: vaos-get-furture-appointments-retrieved","Looking at your GTM implementation, it looks like the variables you are using are looking for parameter names with ""underscores"" instead of ""hyphens"" separating your words. Since your current data layer uses ""hyphens"", your variables currently used in your GA4 tags will return ""(not set)"" as expected since these parameters do not exists in your data layer.
+
+What you should do is switch out the DL variables you are currently using in your GA4 tag with the proper variables (e.g. ""DL - api_name"" should be removed and ""DL - api-name"" should be added).
+
+Please work through this update and let me know if you have any questions. Once this update has been made, you should see your API GA4 events populating with the correct data.
+
+Please feel free to follow up with any questions you may have after reviewing the above.","How do I configure API calls in the product code to capture custom variables/parameters for each call, as needed for my GA4 event?","The issue may be due to a mismatch between variable names and data layer parameters.
+
+Steps to fix:
+
+Update variable names:
+In your GTM implementation, change variable names to match data layer parameters.
+
+
+Re-configure GA4 tag:
+Use the updated variables in your GA4 tag.
+
+Expected results:
+API GA4 events should now populate with correct data.
+"
+"""00001379""","Had an additional question from the dev team regarding App Firebase operation related to GA4. Could you please look into this?
+
+ 
+
+Currently we are having trouble with the firebase json file. The old json file is replaced with the new GA4 json file. But on the server side, old project server key is being used due to which we are unable to receive notifications anymore. Since we would not want to change the server key, is there a way implement GA4 without changing our old Firebase json file, if not please provide us with another solution.","Unfortunately, this type of request does not fall under what the GA360 license product support team can support. As this is related to an implementation and not a GA4 system issue within the GA4 platform, we will not be able to provide assistance with this issue. 
+
+I have included Andrew York, your Search Discovery Client Service Lead, in the event that there may need to be a discussion on putting together a team to help audit the implementation and come up with the next steps that satisfy your needs. ","Can we implement GA4 without changing our old Firebase JSON file or server key, as we're currently experiencing notification issues after updating the file?","The GA360 license product support team cannot directly address this implementation-specific issue.
+
+Next steps:
+
+Engage your Further Client Service Lead, to discuss potential solutions.
+Consider assembling a team to audit the implementation and determine appropriate actions."
+"""00001373""","We have a few questions listed below regarding our GA4 app configuration and hoping you could help us answer the questions.
+
+ 
+
+When seeing Realtime data for website / app for the past 30 mins, the numbers are unusually high. We generally do not have more than 4-5 users working on our test website / app but for some reason it shows 30+ most of the times. Any idea why would this be happening? Just FYI, the numbers are correctly displaying on Universal.
+When 2 or more conditions are applied for segmentation, the Realtime data does not populate any results. It only works when 1 condition is applied. Do you know if this is a bug or is there a way around this?
+For most of our events, our (not set) numbers are very high, despite of configuring the tag correctly. Any idea what needs to be changed in order to minimize this number as much as possible? Did look at google’s page but not that useful. Just FYI, most of the events which we track are custom events.
+How do we connect the debug view on app via GTM, do you have any steps for that. I did create a android container. What needs to be done next?
+ 
+
+While using user snapshot tool to debug, we are unable to see the data instantly. Just FYI our website is connected to GTM, for which the debug view works great, but our app is tagged through backend, for which we are finding a way to debug the events created.
+
+","In an app dev instance, is it possible that your dev team is generating new instances of the app during QA that may be generating a new client ID (device ID)? If so, this may be why you are seeing an increase in users within a 30-minute period.
+
+2. Following the documentation around comparison, there will be combinations of dimensions that may not work in real-time reporting (but may work in other reports). This is due to how GA4 processes the data and in some instances takes time for the back-end of GA4 to digest the data and apply it. In an example of 2 conditions working, Selecting ""Device Category"" = ""mobile"" and ""App version"" = 5.44, the real-time report continues to show activity
+
+Can you provide some combinations that are causing the report to not display data on your end?
+
+
+3. During your QA of tracking, are you watching the network calls being set out of the app and into GA4 or are you just firing the event and waiting to see the event in GA4? I would always suggest you follow the path of data as it flows to GA4 in case the data is not being sent with the expected data. In regards to the (not set) data you are seeing, can you provide some dimensions + event combos so that I can take a look?
+
+4. In regards to debug for apps, Google has documentation for Android and iOS below:
+
+Google Tag Manager for Android
+Google Tag Manager for iOS
+
+2. Realtime is subject to data processing delays and what may or may not be available at the time data is flowing in. The realtime report will not always work with every dimension in GA4, and if it is important to debug events that are coming in along with the information each event is sending, then I would suggest using the debug feature when testing your apps: 
+
+https://analytics.google.com/analytics/web/?pli=1#/a237882206p327698204/admin/debugview/overview
+
+https://support.google.com/analytics/answer/7201382?hl=en
+
+3. I would still suggest watching the data flow from the initial point (e.g. the app) and follow the activity between that and GA4. If there is a point in the process where the data changes, you will only find that out when tracing the data between systems. Often times, the implemenation of the events is solid from a dev perspective, but when the event is sent from the app out to GA4, the data is not populating the network call and thus resulting in (not set) at the end. If you can provide me with screenshots of the trace between app to GA4, that would be helpful to determine where the data is being lost.
+
+4. Great!
+
+5. As mentioned above, using the ""DebugView"" feature seems to be what you are more interested vs the realtime reporting + user snapshot. The DebugView feature is more geared toward seeing the data as a whole as it come through via a debug activated device. This will allow you to better see information coming through to GA4 vs. the RT report which is not designed to capture and display all data points sent with each event.
+
+https://support.google.com/analytics/answer/7201382?hl=en","Why are Realtime user numbers unusually high in GA4, even though we have only 4-5 testers?",Explore if multiple device IDs are being generated during app dev testing.
+"""00001373""","We have a few questions listed below regarding our GA4 app configuration and hoping you could help us answer the questions.
+
+ 
+
+When seeing Realtime data for website / app for the past 30 mins, the numbers are unusually high. We generally do not have more than 4-5 users working on our test website / app but for some reason it shows 30+ most of the times. Any idea why would this be happening? Just FYI, the numbers are correctly displaying on Universal.
+When 2 or more conditions are applied for segmentation, the Realtime data does not populate any results. It only works when 1 condition is applied. Do you know if this is a bug or is there a way around this?
+For most of our events, our (not set) numbers are very high, despite of configuring the tag correctly. Any idea what needs to be changed in order to minimize this number as much as possible? Did look at google’s page but not that useful. Just FYI, most of the events which we track are custom events.
+How do we connect the debug view on app via GTM, do you have any steps for that. I did create a android container. What needs to be done next?
+ 
+
+While using user snapshot tool to debug, we are unable to see the data instantly. Just FYI our website is connected to GTM, for which the debug view works great, but our app is tagged through backend, for which we are finding a way to debug the events created.
+
+","In an app dev instance, is it possible that your dev team is generating new instances of the app during QA that may be generating a new client ID (device ID)? If so, this may be why you are seeing an increase in users within a 30-minute period.
+
+2. Following the documentation around comparison, there will be combinations of dimensions that may not work in real-time reporting (but may work in other reports). This is due to how GA4 processes the data and in some instances takes time for the back-end of GA4 to digest the data and apply it. In an example of 2 conditions working, Selecting ""Device Category"" = ""mobile"" and ""App version"" = 5.44, the real-time report continues to show activity
+
+Can you provide some combinations that are causing the report to not display data on your end?
+
+
+3. During your QA of tracking, are you watching the network calls being set out of the app and into GA4 or are you just firing the event and waiting to see the event in GA4? I would always suggest you follow the path of data as it flows to GA4 in case the data is not being sent with the expected data. In regards to the (not set) data you are seeing, can you provide some dimensions + event combos so that I can take a look?
+
+4. In regards to debug for apps, Google has documentation for Android and iOS below:
+
+Google Tag Manager for Android
+Google Tag Manager for iOS
+
+2. Realtime is subject to data processing delays and what may or may not be available at the time data is flowing in. The realtime report will not always work with every dimension in GA4, and if it is important to debug events that are coming in along with the information each event is sending, then I would suggest using the debug feature when testing your apps: 
+
+https://analytics.google.com/analytics/web/?pli=1#/a237882206p327698204/admin/debugview/overview
+
+https://support.google.com/analytics/answer/7201382?hl=en
+
+3. I would still suggest watching the data flow from the initial point (e.g. the app) and follow the activity between that and GA4. If there is a point in the process where the data changes, you will only find that out when tracing the data between systems. Often times, the implemenation of the events is solid from a dev perspective, but when the event is sent from the app out to GA4, the data is not populating the network call and thus resulting in (not set) at the end. If you can provide me with screenshots of the trace between app to GA4, that would be helpful to determine where the data is being lost.
+
+4. Great!
+
+5. As mentioned above, using the ""DebugView"" feature seems to be what you are more interested vs the realtime reporting + user snapshot. The DebugView feature is more geared toward seeing the data as a whole as it come through via a debug activated device. This will allow you to better see information coming through to GA4 vs. the RT report which is not designed to capture and display all data points sent with each event.
+
+https://support.google.com/analytics/answer/7201382?hl=en",Why does Realtime data disappear when applying multiple segmentation conditions?,It's a known limitation. Use DebugView for more comprehensive debugging.
+"""00001373""","We have a few questions listed below regarding our GA4 app configuration and hoping you could help us answer the questions.
+
+ 
+
+When seeing Realtime data for website / app for the past 30 mins, the numbers are unusually high. We generally do not have more than 4-5 users working on our test website / app but for some reason it shows 30+ most of the times. Any idea why would this be happening? Just FYI, the numbers are correctly displaying on Universal.
+When 2 or more conditions are applied for segmentation, the Realtime data does not populate any results. It only works when 1 condition is applied. Do you know if this is a bug or is there a way around this?
+For most of our events, our (not set) numbers are very high, despite of configuring the tag correctly. Any idea what needs to be changed in order to minimize this number as much as possible? Did look at google’s page but not that useful. Just FYI, most of the events which we track are custom events.
+How do we connect the debug view on app via GTM, do you have any steps for that. I did create a android container. What needs to be done next?
+ 
+
+While using user snapshot tool to debug, we are unable to see the data instantly. Just FYI our website is connected to GTM, for which the debug view works great, but our app is tagged through backend, for which we are finding a way to debug the events created.
+
+","In an app dev instance, is it possible that your dev team is generating new instances of the app during QA that may be generating a new client ID (device ID)? If so, this may be why you are seeing an increase in users within a 30-minute period.
+
+2. Following the documentation around comparison, there will be combinations of dimensions that may not work in real-time reporting (but may work in other reports). This is due to how GA4 processes the data and in some instances takes time for the back-end of GA4 to digest the data and apply it. In an example of 2 conditions working, Selecting ""Device Category"" = ""mobile"" and ""App version"" = 5.44, the real-time report continues to show activity
+
+Can you provide some combinations that are causing the report to not display data on your end?
+
+
+3. During your QA of tracking, are you watching the network calls being set out of the app and into GA4 or are you just firing the event and waiting to see the event in GA4? I would always suggest you follow the path of data as it flows to GA4 in case the data is not being sent with the expected data. In regards to the (not set) data you are seeing, can you provide some dimensions + event combos so that I can take a look?
+
+4. In regards to debug for apps, Google has documentation for Android and iOS below:
+
+Google Tag Manager for Android
+Google Tag Manager for iOS
+
+2. Realtime is subject to data processing delays and what may or may not be available at the time data is flowing in. The realtime report will not always work with every dimension in GA4, and if it is important to debug events that are coming in along with the information each event is sending, then I would suggest using the debug feature when testing your apps: 
+
+https://analytics.google.com/analytics/web/?pli=1#/a237882206p327698204/admin/debugview/overview
+
+https://support.google.com/analytics/answer/7201382?hl=en
+
+3. I would still suggest watching the data flow from the initial point (e.g. the app) and follow the activity between that and GA4. If there is a point in the process where the data changes, you will only find that out when tracing the data between systems. Often times, the implemenation of the events is solid from a dev perspective, but when the event is sent from the app out to GA4, the data is not populating the network call and thus resulting in (not set) at the end. If you can provide me with screenshots of the trace between app to GA4, that would be helpful to determine where the data is being lost.
+
+4. Great!
+
+5. As mentioned above, using the ""DebugView"" feature seems to be what you are more interested vs the realtime reporting + user snapshot. The DebugView feature is more geared toward seeing the data as a whole as it come through via a debug activated device. This will allow you to better see information coming through to GA4 vs. the RT report which is not designed to capture and display all data points sent with each event.
+
+https://support.google.com/analytics/answer/7201382?hl=en","Why are ""(not set)"" values high for custom events, despite correct tag configuration?",Trace data flow from app to GA4 to pinpoint where data gets lost. Provide screenshots for analysis.
+"""00001373""","We have a few questions listed below regarding our GA4 app configuration and hoping you could help us answer the questions.
+
+ 
+
+When seeing Realtime data for website / app for the past 30 mins, the numbers are unusually high. We generally do not have more than 4-5 users working on our test website / app but for some reason it shows 30+ most of the times. Any idea why would this be happening? Just FYI, the numbers are correctly displaying on Universal.
+When 2 or more conditions are applied for segmentation, the Realtime data does not populate any results. It only works when 1 condition is applied. Do you know if this is a bug or is there a way around this?
+For most of our events, our (not set) numbers are very high, despite of configuring the tag correctly. Any idea what needs to be changed in order to minimize this number as much as possible? Did look at google’s page but not that useful. Just FYI, most of the events which we track are custom events.
+How do we connect the debug view on app via GTM, do you have any steps for that. I did create a android container. What needs to be done next?
+ 
+
+While using user snapshot tool to debug, we are unable to see the data instantly. Just FYI our website is connected to GTM, for which the debug view works great, but our app is tagged through backend, for which we are finding a way to debug the events created.
+
+","In an app dev instance, is it possible that your dev team is generating new instances of the app during QA that may be generating a new client ID (device ID)? If so, this may be why you are seeing an increase in users within a 30-minute period.
+
+2. Following the documentation around comparison, there will be combinations of dimensions that may not work in real-time reporting (but may work in other reports). This is due to how GA4 processes the data and in some instances takes time for the back-end of GA4 to digest the data and apply it. In an example of 2 conditions working, Selecting ""Device Category"" = ""mobile"" and ""App version"" = 5.44, the real-time report continues to show activity
+
+Can you provide some combinations that are causing the report to not display data on your end?
+
+
+3. During your QA of tracking, are you watching the network calls being set out of the app and into GA4 or are you just firing the event and waiting to see the event in GA4? I would always suggest you follow the path of data as it flows to GA4 in case the data is not being sent with the expected data. In regards to the (not set) data you are seeing, can you provide some dimensions + event combos so that I can take a look?
+
+4. In regards to debug for apps, Google has documentation for Android and iOS below:
+
+Google Tag Manager for Android
+Google Tag Manager for iOS
+
+2. Realtime is subject to data processing delays and what may or may not be available at the time data is flowing in. The realtime report will not always work with every dimension in GA4, and if it is important to debug events that are coming in along with the information each event is sending, then I would suggest using the debug feature when testing your apps: 
+
+https://analytics.google.com/analytics/web/?pli=1#/a237882206p327698204/admin/debugview/overview
+
+https://support.google.com/analytics/answer/7201382?hl=en
+
+3. I would still suggest watching the data flow from the initial point (e.g. the app) and follow the activity between that and GA4. If there is a point in the process where the data changes, you will only find that out when tracing the data between systems. Often times, the implemenation of the events is solid from a dev perspective, but when the event is sent from the app out to GA4, the data is not populating the network call and thus resulting in (not set) at the end. If you can provide me with screenshots of the trace between app to GA4, that would be helpful to determine where the data is being lost.
+
+4. Great!
+
+5. As mentioned above, using the ""DebugView"" feature seems to be what you are more interested vs the realtime reporting + user snapshot. The DebugView feature is more geared toward seeing the data as a whole as it come through via a debug activated device. This will allow you to better see information coming through to GA4 vs. the RT report which is not designed to capture and display all data points sent with each event.
+
+https://support.google.com/analytics/answer/7201382?hl=en",How to connect debug view on app via GTM for an Android container?,"Refer to Google's documentation:
+
+Google Tag Manager for Android: https://developers.google.com/tag-platform/tag-manager/android/v5#preview-debug-pubish-container
+
+Google Tag Manager for iOS: https://developers.google.com/tag-platform/tag-manager/ios/v5#preview-debug-pubish-container"
+"""00001373""","We have a few questions listed below regarding our GA4 app configuration and hoping you could help us answer the questions.
+
+ 
+
+When seeing Realtime data for website / app for the past 30 mins, the numbers are unusually high. We generally do not have more than 4-5 users working on our test website / app but for some reason it shows 30+ most of the times. Any idea why would this be happening? Just FYI, the numbers are correctly displaying on Universal.
+When 2 or more conditions are applied for segmentation, the Realtime data does not populate any results. It only works when 1 condition is applied. Do you know if this is a bug or is there a way around this?
+For most of our events, our (not set) numbers are very high, despite of configuring the tag correctly. Any idea what needs to be changed in order to minimize this number as much as possible? Did look at google’s page but not that useful. Just FYI, most of the events which we track are custom events.
+How do we connect the debug view on app via GTM, do you have any steps for that. I did create a android container. What needs to be done next?
+ 
+
+While using user snapshot tool to debug, we are unable to see the data instantly. Just FYI our website is connected to GTM, for which the debug view works great, but our app is tagged through backend, for which we are finding a way to debug the events created.
+
+","In an app dev instance, is it possible that your dev team is generating new instances of the app during QA that may be generating a new client ID (device ID)? If so, this may be why you are seeing an increase in users within a 30-minute period.
+
+2. Following the documentation around comparison, there will be combinations of dimensions that may not work in real-time reporting (but may work in other reports). This is due to how GA4 processes the data and in some instances takes time for the back-end of GA4 to digest the data and apply it. In an example of 2 conditions working, Selecting ""Device Category"" = ""mobile"" and ""App version"" = 5.44, the real-time report continues to show activity
+
+Can you provide some combinations that are causing the report to not display data on your end?
+
+
+3. During your QA of tracking, are you watching the network calls being set out of the app and into GA4 or are you just firing the event and waiting to see the event in GA4? I would always suggest you follow the path of data as it flows to GA4 in case the data is not being sent with the expected data. In regards to the (not set) data you are seeing, can you provide some dimensions + event combos so that I can take a look?
+
+4. In regards to debug for apps, Google has documentation for Android and iOS below:
+
+Google Tag Manager for Android
+Google Tag Manager for iOS
+
+2. Realtime is subject to data processing delays and what may or may not be available at the time data is flowing in. The realtime report will not always work with every dimension in GA4, and if it is important to debug events that are coming in along with the information each event is sending, then I would suggest using the debug feature when testing your apps: 
+
+https://analytics.google.com/analytics/web/?pli=1#/a237882206p327698204/admin/debugview/overview
+
+https://support.google.com/analytics/answer/7201382?hl=en
+
+3. I would still suggest watching the data flow from the initial point (e.g. the app) and follow the activity between that and GA4. If there is a point in the process where the data changes, you will only find that out when tracing the data between systems. Often times, the implemenation of the events is solid from a dev perspective, but when the event is sent from the app out to GA4, the data is not populating the network call and thus resulting in (not set) at the end. If you can provide me with screenshots of the trace between app to GA4, that would be helpful to determine where the data is being lost.
+
+4. Great!
+
+5. As mentioned above, using the ""DebugView"" feature seems to be what you are more interested vs the realtime reporting + user snapshot. The DebugView feature is more geared toward seeing the data as a whole as it come through via a debug activated device. This will allow you to better see information coming through to GA4 vs. the RT report which is not designed to capture and display all data points sent with each event.
+
+https://support.google.com/analytics/answer/7201382?hl=en",Why is data not instantly visible in User Snapshot tool?,DebugView is better suited for real-time debugging and data visibility.
+"""00001398""","I noticed that (as the recording of this screenshot), that there’s a field for “Billable Event Volume”.  This seems to align with the row field above called “Event volume fee (variable)”.  One of the fields calrified “Variable monthly fee based on the event volume beyond the first 25M events.” However, I noticed that our total event volume (currently over 2M events) is under 25M monthly events for GA4.  Can you help clarify what this means?","Yes, so all billable events under 25m is a flat fee and does not change what they owe each month  (as long as they stay under 25m a month). This means that if you only had 100 events in a month or 24m events in a month, the price you pay is the same. Once they go over 25m billable events, they start to hit the variable cost per tier, where the price per million events after 25m has a few levels where each million events are a different (variable) cost","Why is there a field for ""Billable Event Volume"" and ""Event volume fee (variable)"" even though our total event volume is under 25M monthly events, the threshold for variable fees?","You're only charged a flat fee for events under 25M.
+
+-The ""Billable Event Volume"" field tracks your events even below the 25M threshold for visibility.
+
+-The ""Event volume fee (variable)"" only applies if you exceed 25M events.
+
+-If you stay under 25M, your pricing remains the same regardless of the exact event count.
+
+-If you exceed 25M, you'll start incurring variable costs per million events based on tiered pricing."
+"""00001375""","Today, we officially completed our migration to Google Analytics 4 and have noticed that virtually all of our casper.com conversions are being attributed to a blank session/medium and unassigned channel grouping (refer to the below screenshot). According to this article, this seemed to have been a bug that was fixed earlier this year by Google. However, we seem to be having the same experience today. It is worth noting that we have redirects setup as we also completed a backend migration of our site, however after testing redirecting links with utm_parameters attached, it seems like these are being preserved after the user is redirected so I would expect them to show up in GA4 as well.","I started a session incognito and noticed that there may be some timing impacts on the data layer events that are firing. For example, loading https://casper.com/mattresses/original-foam-v1.html cause the ""view_item"" event to fire right away, and by the looks of it it has fired BEFORE the configuration tag was able to be initialized (assuming it is set in your page_view event).
+
+ am wondering if these rogue events that fire before your configuration tag may also be having an impact on retaining attribution since that initial event is what GA4 will use to fire session_starts and first_visit events.
+
+In regards to things to look for, it sounds like the back-end is set up correctly (from a general GTM redirect handling side of things). I think the overall thing to look for is the timing aspect of events and making sure that the config tag is the first thing that fires so that any attribution can be correctly applied to the proper user in GA4
+","Why are conversions in GA4 showing blank session/medium and unassigned channel grouping, even though redirects are preserving UTM parameters?","The issue could stem from event timing
+
+-Rogue events firing before configuration: Some events, like ""view_item,"" are firing before the configuration tag initializes.
+-Impact on attribution: This premature firing disrupts attribution, as GA4 relies on the initial events to determine session_starts and first_visit.
+
+Solution:
+
+-Prioritize configuration tag: Ensure the configuration tag fires first to establish user context for accurate attribution.
+-Scrutinize event timing: Review and adjust event firing order to prioritize the configuration tag.
+-Verify backend setup: While redirects seem configured correctly, double-check backend settings for potential conflicts.
+
+Another potential cause could be site redirects"
+"""00001395""","I do have a GA4 question:
+
+As I have been reviewing the new features of GA4 360, I came across “subproperties”.  In a way, this looks like a substitute to what “views” were in Universal Analytics but with a cost. 
+
+I was watching the video from Google that explains this: https://www.youtube.com/watch?v=5lo7bi7a86c
+
+Is this simply a solution for convenience in filtering?  I guess that would apply the filtering automatically in the preset reports in GA4.  Just curious though: Would an alternative (if I didn’t prefer subproperties at this time) is to simply provide them a filtered report built in Explorer? 
+
+","The idea behind sub-properties is to be able to provide a subset of information from a source property while being able to manage access to the subset of data as well as integrate tools that you would normally not be able to do with a VIEW in Universal Analytics. 
+
+An example would be creating a Source Global Property that collects all the GA data in a single place. This property could then have a subproperty generated under it, filtering only data that has the custom dimension ""Site Type"" = ""Consumer"".
+
+Access to the subproperty can be granted to users or user groups who you wish to ONLY have access to this (and not the global source property). While this is similar to a VIEW in UA, what is different is now you can link different GMP products, BQ, etc (on roadmap) instead of having a view that is integrated to a property that may have loads of integrations that do not apply to this group of users.
+
+In regards to the exploration report, sharing the report will make it available to all users who have access to a property. So once you create a report on your end (private to you) and select to share it, it will switch that report from private to shared, allowing anyone to see that report.
+
+So, even though a subproperty COULD be as simple as filtering the data, it has the potential to extend in functionality that exceeded what Views were capable of in Universal Analytics.","Are subproperties in GA4 360 simply a filtering solution, similar to views in Universal Analytics? Could I use filtered Explorer reports instead?","Subproperties offer more than filtering.
+
+-Enhanced data control: They allow you to manage access to specific data subsets and integrate tools that views didn't support.
+
+-Data filtering: You can create subproperties based on custom dimensions or other criteria.
+
+-Access management: Grant access to specific users or groups for tailored data views.
+
+-Integration flexibility: Link different GMP products and BigQuery (on the roadmap) to subproperties, not just the entire property.
+
+-Beyond filtering: While Explorer reports can provide filtered views, they're shared within the property, accessible to all users. Subproperties offer more granular control.
+
+Conclusion: Subproperties, while capable of filtering, provide extended functionality and control beyond what views in UA offered. Consider their advantages for data governance and integrations when making a decision."
+"""00001405""","One of our digital developers is running into an issue when building a comparison in Firebase, where they can see a value with an event count, but when they try to use it as a filter, there are no results. This screenshot shows the specific value:
+
+Can you help with this? I’ve copied the developer, Jason Rodriguez, on this email and he can provide more information if needed.","So there is a hidden limit to how many dimension values will be displayed by using the comparison feature (being a web-based UI, this is to keep the functionality useable vs loading EVERY value, and shows as ""(other)""). As the limit is not shared, you may experience a value that does not display when searching. but if you select the ""All values container 'CBN Live Event 1"" object, it will build the comparison using that value:",Why does a specific value with an event count not appear as a filter option when building comparisons in Firebase?,"Firebase has a hidden limit on displayed dimension values to maintain UI performance.
+
+ - Not all values are shown: To avoid overwhelming the interface, not every possible dimension value is displayed in the comparison tool.
+ - Use ""All values"" container: To include a value that isn't directly displayed, select the ""All values"" container for that dimension. This will incorporate the value into the comparison.
+
+Key points:
+-The specific limit for displayed values isn't publicly shared.
+-Using ""All values"" ensures the desired value is included, even if not visible in the search."
+"""00001411""","Can you advise on best approach to handle multi-currency in GA4 please?
+
+ 
+
+We accept USD, GBP, and Euros for our e-commerce transactions and want to make sure transactions in GBP and Euros are correctly converted to USD in our reports.","When sending ecommerce event data to GA4, you can include a currency code. Google provides ecommerce event data structure and supported currency codes in their documentation. GA4 reports convert all currencies into the global currency you've set for your property, and monetary values are based on the exchange rate one day before the transaction occurred.
+
+Let me know if you have any questions on the documentation. I'm happy to help where I can.","How can I handle multi-currency transactions (USD, GBP, Euros) and ensure correct conversion to USD in GA4 reports?","Here's how GA4 manages multi-currency:
+
+-Include currency codes: When sending e-commerce event data, incorporate the currency code (e.g., ""USD"", ""GBP"", ""EUR"") for each transaction.
+
+-Refer to Google's documentation: Find detailed guidance on e-commerce event data structure and supported currency codes in Google's documentation.
+
+ecommerce event data structure: https://developers.google.com/analytics/devguides/collection/ga4/ecommerce?client_type=gtag
+supported currency codes: https://support.google.com/analytics/answer/9796179?hl=en#zippy=%2Cin-this-article
+
+-GA4 handles conversions: GA4 automatically converts all currencies into the global currency you've set for your property.
+
+-Exchange rate: The conversion uses the exchange rate from one day before the transaction occurred.
+Additional notes:
+
+Documentation for clarity: Review Google's documentation for any further questions.
+Offered assistance: The respondent is available for further guidance."
+,"I’m trying to set up BigQuery, and I’m stuck just trying to figure out what account/user name/organization I should be using to get going. I’ve gone multiple routes (via GA, via GMP, and direct) and am thoroughly confused.
+
+The GA admin just prompts to choose an existing BQ project, so that was a dead end.
+
+I thought I would want to use the GMP route, and got here, but our 360 properties aren’t listed.  
+
+I’m guessing this is using UA360, but no idea how to make get our 360 properties to show in the list.
+
+3. So, this is my direct attempt:
+
+ I’ve gotten here using my Westgate email (which is tied to GA and our GMP account):
+
+
+
+And I’m assuming I should choose business here:
+
+If I use “Westgate Resorts” here, will it link to our GMP? Or how do I know if it’s linked to the right organization? There’s no option to that lets me choose something from a dropdown, or prompt to link it on this page.
+
+Please provide the proper way to proceed that ensures that the BQ project will be under the correct login/company/Google Account","You should create a Google Cloud Platform project which you can to here: https://cloud.google.com/gcp/?hl=en You will likely need to add credit card details.
+
+Once you have that then you can link that project to your GA property in GA Admin section. ",Where do I find the login/company/account info for BigQuery with GA 360?,You don't directly use your existing GA or GMP account for BigQuery. You need to create a new Google Cloud Platform (GCP) project.
+,"I’m trying to set up BigQuery, and I’m stuck just trying to figure out what account/user name/organization I should be using to get going. I’ve gone multiple routes (via GA, via GMP, and direct) and am thoroughly confused.
+
+The GA admin just prompts to choose an existing BQ project, so that was a dead end.
+
+I thought I would want to use the GMP route, and got here, but our 360 properties aren’t listed.  
+
+I’m guessing this is using UA360, but no idea how to make get our 360 properties to show in the list.
+
+3. So, this is my direct attempt:
+
+ I’ve gotten here using my Westgate email (which is tied to GA and our GMP account):
+
+
+
+And I’m assuming I should choose business here:
+
+If I use “Westgate Resorts” here, will it link to our GMP? Or how do I know if it’s linked to the right organization? There’s no option to that lets me choose something from a dropdown, or prompt to link it on this page.
+
+Please provide the proper way to proceed that ensures that the BQ project will be under the correct login/company/Google Account","You should create a Google Cloud Platform project which you can to here: https://cloud.google.com/gcp/?hl=en You will likely need to add credit card details.
+
+Once you have that then you can link that project to your GA property in GA Admin section. ",How do I create a GCP project?,Create a new GCP project at https://cloud.google.com/gcp/?hl=en. You may need to add credit card details.
+,"I’m trying to set up BigQuery, and I’m stuck just trying to figure out what account/user name/organization I should be using to get going. I’ve gone multiple routes (via GA, via GMP, and direct) and am thoroughly confused.
+
+The GA admin just prompts to choose an existing BQ project, so that was a dead end.
+
+I thought I would want to use the GMP route, and got here, but our 360 properties aren’t listed.  
+
+I’m guessing this is using UA360, but no idea how to make get our 360 properties to show in the list.
+
+3. So, this is my direct attempt:
+
+ I’ve gotten here using my Westgate email (which is tied to GA and our GMP account):
+
+
+
+And I’m assuming I should choose business here:
+
+If I use “Westgate Resorts” here, will it link to our GMP? Or how do I know if it’s linked to the right organization? There’s no option to that lets me choose something from a dropdown, or prompt to link it on this page.
+
+Please provide the proper way to proceed that ensures that the BQ project will be under the correct login/company/Google Account","You should create a Google Cloud Platform project which you can to here: https://cloud.google.com/gcp/?hl=en You will likely need to add credit card details.
+
+Once you have that then you can link that project to your GA property in GA Admin section. ",How do I connect the GCP project to my GA 360 property?,"Once you have a GCP project, go to your GA Admin section and link the project to your GA property. This will allow you to export data to BigQuery."
+,"I’m trying to set up BigQuery, and I’m stuck just trying to figure out what account/user name/organization I should be using to get going. I’ve gone multiple routes (via GA, via GMP, and direct) and am thoroughly confused.
+
+The GA admin just prompts to choose an existing BQ project, so that was a dead end.
+
+I thought I would want to use the GMP route, and got here, but our 360 properties aren’t listed.  
+
+I’m guessing this is using UA360, but no idea how to make get our 360 properties to show in the list.
+
+3. So, this is my direct attempt:
+
+ I’ve gotten here using my Westgate email (which is tied to GA and our GMP account):
+
+
+
+And I’m assuming I should choose business here:
+
+If I use “Westgate Resorts” here, will it link to our GMP? Or how do I know if it’s linked to the right organization? There’s no option to that lets me choose something from a dropdown, or prompt to link it on this page.
+
+Please provide the proper way to proceed that ensures that the BQ project will be under the correct login/company/Google Account","You should create a Google Cloud Platform project which you can to here: https://cloud.google.com/gcp/?hl=en You will likely need to add credit card details.
+
+Once you have that then you can link that project to your GA property in GA Admin section. ",Which option should I choose when creating the GCP project?,"Choose ""Business"" when creating the GCP project. It doesn't directly link to your GMP, but it allows you to manage various projects like BigQuery for your organization."
+,"I’m trying to set up BigQuery, and I’m stuck just trying to figure out what account/user name/organization I should be using to get going. I’ve gone multiple routes (via GA, via GMP, and direct) and am thoroughly confused.
+
+The GA admin just prompts to choose an existing BQ project, so that was a dead end.
+
+I thought I would want to use the GMP route, and got here, but our 360 properties aren’t listed.  
+
+I’m guessing this is using UA360, but no idea how to make get our 360 properties to show in the list.
+
+3. So, this is my direct attempt:
+
+ I’ve gotten here using my Westgate email (which is tied to GA and our GMP account):
+
+
+
+And I’m assuming I should choose business here:
+
+If I use “Westgate Resorts” here, will it link to our GMP? Or how do I know if it’s linked to the right organization? There’s no option to that lets me choose something from a dropdown, or prompt to link it on this page.
+
+Please provide the proper way to proceed that ensures that the BQ project will be under the correct login/company/Google Account","You should create a Google Cloud Platform project which you can to here: https://cloud.google.com/gcp/?hl=en You will likely need to add credit card details.
+
+Once you have that then you can link that project to your GA property in GA Admin section. ",How do I know if the GCP project is linked to the right organization?,"Check the ""Organization ID"" in your GCP project settings. This should match the organization ID associated with your GA 360 account.
+
+Additional tips:
+
+You can have multiple GCP projects and link them to different GA properties.
+If you already have a GCP project, verify if it's the one you want to use before linking it to your GA 360 property."
+,"I'm reaching out to see if you can help us set up the profile names for our big query project: striking-ensign-353220. From my understanding, your team set this up on big query with the property_id being the dominant factory for distinguishing the properties, but we also need the property names.
+I do not want to rename the dataset with the GA4 Property name, I just want to add the property name somewhere in there to be able to visually distinguish the property. 
+How can I add a description for each dataset and what would it look like? I think this might solve my issue. ","Select the GA dataset, then click EDIT DETAILS and add the description which will appear under Dataset Info. ",How can I visually distinguish GA4 properties in BigQuery without renaming datasets? Can I add a description to each dataset?,"Yes, you can add a description to each dataset to provide more context:
+
+1. Access Edit Details:
+
+Locate the GA dataset you want to edit.
+Click the ""Edit Details"" option.
+2. Add Description:
+
+Within the Edit Details section, find the ""Dataset Info"" area.
+Enter the GA4 property name or any descriptive information in the ""Description"" field.
+Save the changes.
+Once added, the description will be visible alongside the dataset name, making it easier to distinguish properties."
+"""00001409""","We are considering setting up an audience for our newly redesigned website that uses GA4 for analytics, and would like some guidance on this. We have a user experience that includes multiple pages, and we need to know which users go through this process in a single session. Here is more detail:
+
+User clicks “Pray for Salvation” (event is triggered) and then are transitioned for another page.
+User indicates if this was a rededication (event) or first time praying (different event).
+User can also provide their email address and ask that we contact them (event).
+ 
+
+We want to know, for example, how many users trigger the Pray for Salvation event and not the Rededication event in a single session. Or how many ask for contact and how many don’t.
+
+ 
+
+In our previous setup with Universal Analytics, we accomplished this by using segments. Our understanding is that audiences were the way to go for GA, but the team found this while researching (and segments are not supported by the Google API):
+
+When you create a new audience, it can take 24-48 hours for the audience to accumulate new users. In general, when a new user satisfies the audience criteria, it can take a day or two for that new user to be included in the audience.
+
+ 
+
+These numbers need to be reported every day for the previous 24 hours, so we’re concerned audiences are not the way to go.
+
+ 
+
+So, given all of this, these are our questions:
+
+Does it really take a day or two for a new user to be included in an existing audience?
+Is this turnaround time different from what exists for segments in Universal Analytics today? If this variability exists, currently, that might be ok.
+Is there a better recommended approach to handling this dilemma?","1. It CAN take up to two days, however, it is more likely to take a day but the verbiage is set up to cover any delays that may occur.
+
+2. Segments (comparisons in GA4) are session/user-based filters that look at the current data set. Sessions ARE available in GA4, but can only be used in Exploration reports (custom reports), which may be used to help reproduce the reports you would most commonly use in UA for your analysis.
+
+In regards to the comparison, these can be applied to common reports, however, they are limited to looking at dimensions (excluding events). So unless there is another dimension that is being populated that can be used, this feature may not be helpful for your case
+
+3. To get around the actual AUDIENCE from being attributed, there is a feature called ""Adience Triggers"".
+
+https://support.google.com/analytics/answer/9934109?hl=en
+
+This ""trigger"" will essentially fire an event when a user joins an audience (with the option to re-trigger if a user RE-joins the audience). This feature seems to be more FASTER than the actual user being attributed to an audience (the event sends the same day). If you plan on looking at the previous day's audience numbers, this ""Audience Trigger"" feature may be the way to go to get you the data you need in a timely manner.",Does it really take 1-2 days for a user to be included in an audience in GA4?,"Yes, it can take up to 2 days, but typically around 1 day. The wording is cautious to account for potential delays."
+"""00001409""","We are considering setting up an audience for our newly redesigned website that uses GA4 for analytics, and would like some guidance on this. We have a user experience that includes multiple pages, and we need to know which users go through this process in a single session. Here is more detail:
+
+User clicks “Pray for Salvation” (event is triggered) and then are transitioned for another page.
+User indicates if this was a rededication (event) or first time praying (different event).
+User can also provide their email address and ask that we contact them (event).
+ 
+
+We want to know, for example, how many users trigger the Pray for Salvation event and not the Rededication event in a single session. Or how many ask for contact and how many don’t.
+
+ 
+
+In our previous setup with Universal Analytics, we accomplished this by using segments. Our understanding is that audiences were the way to go for GA, but the team found this while researching (and segments are not supported by the Google API):
+
+When you create a new audience, it can take 24-48 hours for the audience to accumulate new users. In general, when a new user satisfies the audience criteria, it can take a day or two for that new user to be included in the audience.
+
+ 
+
+These numbers need to be reported every day for the previous 24 hours, so we’re concerned audiences are not the way to go.
+
+ 
+
+So, given all of this, these are our questions:
+
+Does it really take a day or two for a new user to be included in an existing audience?
+Is this turnaround time different from what exists for segments in Universal Analytics today? If this variability exists, currently, that might be ok.
+Is there a better recommended approach to handling this dilemma?","1. It CAN take up to two days, however, it is more likely to take a day but the verbiage is set up to cover any delays that may occur.
+
+2. Segments (comparisons in GA4) are session/user-based filters that look at the current data set. Sessions ARE available in GA4, but can only be used in Exploration reports (custom reports), which may be used to help reproduce the reports you would most commonly use in UA for your analysis.
+
+In regards to the comparison, these can be applied to common reports, however, they are limited to looking at dimensions (excluding events). So unless there is another dimension that is being populated that can be used, this feature may not be helpful for your case
+
+3. To get around the actual AUDIENCE from being attributed, there is a feature called ""Adience Triggers"".
+
+https://support.google.com/analytics/answer/9934109?hl=en
+
+This ""trigger"" will essentially fire an event when a user joins an audience (with the option to re-trigger if a user RE-joins the audience). This feature seems to be more FASTER than the actual user being attributed to an audience (the event sends the same day). If you plan on looking at the previous day's audience numbers, this ""Audience Trigger"" feature may be the way to go to get you the data you need in a timely manner.",Is this turnaround time different from segments in Universal Analytics?,"Yes, segments in UA are session/user-based filters that work with current datasets, providing more immediate results."
+"""00001409""","We are considering setting up an audience for our newly redesigned website that uses GA4 for analytics, and would like some guidance on this. We have a user experience that includes multiple pages, and we need to know which users go through this process in a single session. Here is more detail:
+
+User clicks “Pray for Salvation” (event is triggered) and then are transitioned for another page.
+User indicates if this was a rededication (event) or first time praying (different event).
+User can also provide their email address and ask that we contact them (event).
+ 
+
+We want to know, for example, how many users trigger the Pray for Salvation event and not the Rededication event in a single session. Or how many ask for contact and how many don’t.
+
+ 
+
+In our previous setup with Universal Analytics, we accomplished this by using segments. Our understanding is that audiences were the way to go for GA, but the team found this while researching (and segments are not supported by the Google API):
+
+When you create a new audience, it can take 24-48 hours for the audience to accumulate new users. In general, when a new user satisfies the audience criteria, it can take a day or two for that new user to be included in the audience.
+
+ 
+
+These numbers need to be reported every day for the previous 24 hours, so we’re concerned audiences are not the way to go.
+
+ 
+
+So, given all of this, these are our questions:
+
+Does it really take a day or two for a new user to be included in an existing audience?
+Is this turnaround time different from what exists for segments in Universal Analytics today? If this variability exists, currently, that might be ok.
+Is there a better recommended approach to handling this dilemma?","1. It CAN take up to two days, however, it is more likely to take a day but the verbiage is set up to cover any delays that may occur.
+
+2. Segments (comparisons in GA4) are session/user-based filters that look at the current data set. Sessions ARE available in GA4, but can only be used in Exploration reports (custom reports), which may be used to help reproduce the reports you would most commonly use in UA for your analysis.
+
+In regards to the comparison, these can be applied to common reports, however, they are limited to looking at dimensions (excluding events). So unless there is another dimension that is being populated that can be used, this feature may not be helpful for your case
+
+3. To get around the actual AUDIENCE from being attributed, there is a feature called ""Adience Triggers"".
+
+https://support.google.com/analytics/answer/9934109?hl=en
+
+This ""trigger"" will essentially fire an event when a user joins an audience (with the option to re-trigger if a user RE-joins the audience). This feature seems to be more FASTER than the actual user being attributed to an audience (the event sends the same day). If you plan on looking at the previous day's audience numbers, this ""Audience Trigger"" feature may be the way to go to get you the data you need in a timely manner.",Is there a better way to handle this need for daily reporting?,"Consider these approaches:
+
+Exploration Reports: Use these custom reports to analyze session-based data, similar to UA segments.
+Audience Triggers: Set up events that fire when users join or rejoin audiences. These events send data more quickly, often within the same day, making them suitable for daily reporting.
+Key Points:
+
+Audience population in GA4 can have a delay.
+Exploration reports and audience triggers offer alternative solutions for timely data access.
+Choose the approach that best aligns with your specific reporting needs.
+
+https://support.google.com/analytics/answer/9934109?hl=en"
+"""00001409""","This comment from the documentation below is confusing.
+
+Does that mean each person gets one event per day ? Or one “additional” event (meaning 2 per day)?
+
+If it is the first case, then it will work for us.
+
+ 
+
+Select Create an additional event (up to one per day) when the audience membership refreshes if you want to trigger an event each time a user meets the audience criteria, even if they are already a member of that audience.","In regards to the statement, it means that if a user performs the audience requirements, it will generate an additional event for that day, but only once. The event can only be triggered once per day, and will not be able to retrigger until the next day (or any day after a single event has fired).","Can a user trigger an audience trigger event multiple times per day, or is it limited to one event per day?","A user can only trigger an audience trigger event once per day, even if they meet the audience criteria multiple times within that day.
+
+Key points:
+
+The event can only fire once per day for each user.
+It will not retrigger until the next day, even if the user continues to meet the audience conditions.
+This setting is designed to ensure data consistency and avoid potential over-reporting.
+
+https://support.google.com/analytics/answer/9934109?hl=en"
+"""00001415""","I believe what we really need to know is if there are settings other than the data collection settings in GA that allow for use of the data. 
+ 
+We don't need someone to dive in and audit the system, just a question on how GA works in general. Are those settings all that need to be checked to not allow for others to use data?","In regards to what Google Analytics shares and doesn't share, the settings at the ACCOUNT level in your Google Analytics account can be adjusted:
+
+Data sharing settings
+
+This article highlights what data is shared and how to enable/disable each feature. These settings are how Google Analytics shares data and does not impact other tools.
+
+Outside of these settings, if there are other things being sent to other platforms, it would not be from Google Analytics but other tags/pixels that may be implemented on your site/tag management tool.","Are there settings beyond data collection settings in GA that control data sharing, and are those settings enough to prevent others from using the data?","Data Sharing Settings:
+ -These are the primary controls for managing how GA shares data.
+ -They are found at the account level in your GA settings.
+ - Adjust them to enable or disable specific data sharing features.
+No Additional GA Settings:
+ - There are no other settings within GA itself that govern data sharing.
+External Tags/Pixels:
+ - Be mindful of other tracking tools or pixels on your site or in your tag management system, as they might independently share data.
+Review and Adjust:
+ - Carefully review the data sharing settings in GA to align with your preferences.
+ - Check for external tags or pixels that could share data and manage them accordingly."
+"""00001417""",About Objects is struggling with our purchase everts throwing error_values and they are hoping we can escalate to Google to try and better understand why our purchases are receiving these errors.,"Here is a list of errors that can occur with firebase events: https://firebase.google.com/docs/analytics/errors
+
+This can happen with ANY event (and you will be provided an error code + value to help determine the issue).
+
+When looking at the ""firebase_error"" parameter in your event report, you will see the ""4"" code present:
+
+Looking at the list of codes, you will see that ""4"" translates to:
+
+
+Cause:
+Event parameter value is too long 
+
+Result:
+The invalid parameter is dropped. A firebase_error parameter is added to the event and a firebase_error_value parameter is added to indicate the name of the parameter with the invalid value.
+
+
+When you look at the ""error_value"", you will see that the invalid parameter is your items[0] parameter: 
+
+This means that your item parameter exceeds the allotted size you can send with a Google Analytics 4 event.
+
+GA4 does have collection limits, which can be reviewed here: Collection and configuration limits, [GA4] Google Analytics 360 (Limit Changes), and [GA4] Event collection limits
+
+With this, you may have to evaluate the number of characters being sent within a parameter (possibly name as that seems to be a parameter that can fluctuate in characters quite a bit).
+
+The Items parameter will need to be evaluated in regard to what is being sent, and there will need to be adjustments to the number of characters being transmitted.",Why are we receiving firebase_error for our purchase events in Firebase?,"First check to see what the error value is. If it is 4 follow below
+
+1. Error Code 4: The error code 4 indicates that an event parameter value is too long, exceeding the allowed size for GA4 events. List of error codes: https://firebase.google.com/docs/analytics/errors
+2. Affected Parameter: The specific parameter causing the error is the ""items[0]"" parameter.
+3. Collection Limits: GA4 has collection limits for event parameters. Review these limits to understand the allowed character counts:
+
+Collection and configuration limits
+[GA4] Google Analytics 360 (Limit Changes): https://support.google.com/analytics/answer/9267744?hl=en&visit_id=638393901004041685-1750208081&rd=1
+
+[GA4] Event collection limits 4. Address the Issue:
+Analyze the ""items[0]"" parameter to determine what information is being sent and its character length.
+Reduce the number of characters being transmitted for this parameter to fall within GA4's limits.
+Consider focusing on the ""name"" parameter, as it often varies significantly in character count."
+"""00001417""",About Objects is struggling with our purchase everts throwing error_values and they are hoping we can escalate to Google to try and better understand why our purchases are receiving these errors.,"Here is a list of errors that can occur with firebase events: https://firebase.google.com/docs/analytics/errors
+
+This can happen with ANY event (and you will be provided an error code + value to help determine the issue).
+
+When looking at the ""firebase_error"" parameter in your event report, you will see the ""4"" code present:
+
+Looking at the list of codes, you will see that ""4"" translates to:
+
+
+Cause:
+Event parameter value is too long 
+
+Result:
+The invalid parameter is dropped. A firebase_error parameter is added to the event and a firebase_error_value parameter is added to indicate the name of the parameter with the invalid value.
+
+
+When you look at the ""error_value"", you will see that the invalid parameter is your items[0] parameter: 
+
+This means that your item parameter exceeds the allotted size you can send with a Google Analytics 4 event.
+
+GA4 does have collection limits, which can be reviewed here: Collection and configuration limits, [GA4] Google Analytics 360 (Limit Changes), and [GA4] Event collection limits
+
+With this, you may have to evaluate the number of characters being sent within a parameter (possibly name as that seems to be a parameter that can fluctuate in characters quite a bit).
+
+The Items parameter will need to be evaluated in regard to what is being sent, and there will need to be adjustments to the number of characters being transmitted.","Why are we receiving firebase_error = ""4"" for our purchase events in Firebase?","Error code 4: Indicates an event parameter value is too long and has been dropped.
+
+https://firebase.google.com/docs/analytics/errors"
+"""00001417""",About Objects is struggling with our purchase everts throwing error_values and they are hoping we can escalate to Google to try and better understand why our purchases are receiving these errors.,"Here is a list of errors that can occur with firebase events: https://firebase.google.com/docs/analytics/errors
+
+This can happen with ANY event (and you will be provided an error code + value to help determine the issue).
+
+When looking at the ""firebase_error"" parameter in your event report, you will see the ""4"" code present:
+
+Looking at the list of codes, you will see that ""4"" translates to:
+
+
+Cause:
+Event parameter value is too long 
+
+Result:
+The invalid parameter is dropped. A firebase_error parameter is added to the event and a firebase_error_value parameter is added to indicate the name of the parameter with the invalid value.
+
+
+When you look at the ""error_value"", you will see that the invalid parameter is your items[0] parameter: 
+
+This means that your item parameter exceeds the allotted size you can send with a Google Analytics 4 event.
+
+GA4 does have collection limits, which can be reviewed here: Collection and configuration limits, [GA4] Google Analytics 360 (Limit Changes), and [GA4] Event collection limits
+
+With this, you may have to evaluate the number of characters being sent within a parameter (possibly name as that seems to be a parameter that can fluctuate in characters quite a bit).
+
+The Items parameter will need to be evaluated in regard to what is being sent, and there will need to be adjustments to the number of characters being transmitted.",Why are we seeing items[0] for our purchase events in Firebase?,"Problem parameter: The items[0] parameter is exceeding the allowed size for GA4 events.
+Solution:
+Review GA4 collection limits:
+https://support.google.com/analytics/answer/9267744?hl=en&visit_id=638393901004041685-1750208081&rd=1
+
+https://support.google.com/analytics/answer/11202874
+
+https://support.google.com/analytics/answer/9267744?hl=en#:~:text=In%20addition%20to%20the%20prescribed,parameters%20in%20an%20ecommerce%20event.
+Evaluate the items[0] parameter, focusing on character count.
+Adjust the parameter's content to reduce the number of characters being transmitted."
+,,,We need to change our property to 360 to get around the export limitations to Big Query.,"Sales Partners can set the service levels of properties for their clients. Sales Partner clients and Direct clients can set the service levels of their own properties. To set the service level of a property:
+
+Sign in to Google Marketing Platform.
+Click Administration > Organizations.
+Click the relevant organization.
+Sales Partner: Click Clients, then click a client name. Under Linked accounts, select Analytics, then the specific account.
+Client: Under Linked accounts, select Analytics, then the specific account.
+Select the check box for the Google Analytics 4 property you want to upgrade/downgrade.
+Click More, then click Upgrade selected properties"
+"""00001435""","Hello,
+
+ 
+
+NCBI recently adjusted the data retention settings for GA4 reporting purposes to 50 months.  We therefore expect the data to go back 14 months per the google docs . The built-in reports (Reports tab) go back as expected, but any custom report we make in the Explore tab do not.  NLM has the same setting and they do not have this problem.  According to some docs we read, it should be retroactive, and we should be able to go back 14 months in these Explore reports as well, but we cannot, we can only go back to Feb 2023.  Can you check/verify our settings or otherwise confirm whether this should be happening or not, or if GA4 has another bug that must be reported?
+
+https://support.google.com/analytics/answer/7667196?hl=en&utm_id=ad
+
+https://marketingplatform.google.com/about/analytics_products/sla/
+
+ 
+
+We see caveats in these docs such as  ""Large and XL properties are limited to 2 months"" but these are in the tens of billions of hits, but NCBI is below that.
+
+Here is a recently created Explore report that we are only allowed to go back to Jan 31, 2023 using the date filters: https://analytics.google.com/analytics/web/?authuser=1#/analysis/p300702817/edit/UD4ofdj4R46dOUn0w26cjA
+
+ 
+
+We have been collecting data in GA4 for over one year now, and of course we can access data going this far back using the raw data sent to BigQuery.
+
+ 
+
+Thank you.","Hello and thank you for contacting us!
+
+So the data retention setting will only take into account the value set from the point it is set at. This setting is not retroactive and will not allow you to use data 50 months in the past within custom reports until you have accumulated 50 months of data from the time you changed your setting. 
+
+you mentioned that you have read that is should be retroactive. Can you provide me with that documentation? You may be referring to the statement in the Data Retention Documentation:
+
+If you increase the retention period for a Google Analytics 4 property the change is applied to data that you have already collected.
+
+This is stating that if your setting was originally set to 14 months and changed to 50 months then data that is within the 14-month range at the time of change will not be stored for 50 months. However, data that was removed AFTER 14 months will still not be available as it was not retained for explorations. 
+
+What this means is that you will still only be able to go back 14 months from the day you changed the retention setting but will continue to build explorations with the same minimum date up to 50 months with your updated settings.
+
+I hope this information was insightful (although I know not ideal).
+
+Please review and let me know if you have any additional questions.
+
+Thank you!",Why can't I access 14 months of data in custom Explore reports even though the data retention setting is 50 months?,"- Data retention is not retroactive for Explore reports. When you change the setting, it only applies to data collected from that point forward.
+
+- Existing data within the 14-month range will be retained for 50 months, but older data already removed will not be available.
+
+- You'll be able to access 14 months of data in Explore reports starting from the day you changed the setting.
+
+- Going forward, you'll gradually be able to access up to 50 months of data in Explore reports as you accumulate more data."
+"""00001442""","Got an additional question which was pointed out recently from one of our team members.
+
+If you see the screenshot attached along with this email, there are different pages having the exact same number of pageviews on UGA. Could you tell us why is this happening and how could we prevent this from happening.
+               FYI, all data.                                                                                                                                                                                                                                                                                      Is it possible for access to this property to be shared to support-team@searchdiscovery.com?
+
+By filters, I mean navigating out of this report to the admin menu and opening the Filter sub-menu under the relevant view options.","I’ve got some good info to share:
+
+Real-time Report Differences
+You mentioned concern about GA4 numbers being both higher and lower than UA, which is why you only use UA for real-time reports. First, let’s take a step back for a minute and see if GA4 and UA’s overall numbers match up. 
+
+Overall user counts are quite close to each other. Pageviews have a slightly larger difference for your main domain, but this could be due to OneTrust, GA4’s different system of pageview detection, or variances in where you have installed UA and GA4. What the metrics tell me is that you are receiving all data successfully, so we can safely postulate that the problem lies in how Google generates its real-time reports.
+
+Google has openly acknowledged that UA’s real-time report has bugs that significantly impact the active users metric. They have no intention of fixing this since UA will be sunset this July. Additionally, bear in mind that UA is reporting on active users in the last 5 minutes, while GA4 is reporting on the last 30 minutes.
+
+It is our opinion that your analytics implementation is working correctly and that your historical reports are accurate. For accurate real-time reporting, we highly recommend utilizing GA4’s report.
+
+Pageview Metric Duplicates
+In my initial response, I completely neglected to consider the usual culprit for matching metrics: report sampling. The sheer volume of traffic AP News accrues necessitates some aggressive traffic sampling. According to the Pages report in UA, only 1.55% of session traffic is being used to generate the report:
+
+
+The metrics you are seeing are estimations based on this small sample size. For accurate numbers, you can run an unsampled export:","Why are different pages showing the same number of pageviews in reporting, and how can we fix this?
+","One potential reason is Report Sampling:
+The issue is likely due to report sampling, which estimates data based on a portion of traffic, to handle high volumes.
+This can sometimes lead to duplicate metrics.
+
+Recommendations:
+- Increase Sampling Rate (if possible): Check if you can increase the sampling rate in the report's settings to get more accurate data.
+- Utilize Unsampled Reports (if available): If the report offers unsampled reports, use them for precise metrics.
+- Consider GA4: GA4 generally has less sampling, so it could provide more accurate pageview counts."
+"""00001454""","This is regarding the event “marketo-webinar_form_fill”.  This use to be created from within GA4, but we more recently moved it to Google Tag Manager.
+
+ 
+
+A portion of our webinar form pages are based on Marketo.  The pages are under a subdomain instead of the main domain, but the “thank you” those pages are under the main domain.  For example, is a user completed the webinar form from this page (https://start.uipath.com/Future-of-Work-Finance-Function.html), they would be direct to this page https://www.uipath.com/g/thank-you-webinar-on-demand.  This “thank you” page is standard across all marketo webinar form pages. 
+
+ 
+
+With having multiple webinars, we would want to know the volume to each webinar.  When making the event in GA4, I thought I could get that answer by the “page referrer” dimension.  However, the data only showed us https://start.uipath.com and not the slug.  We found out that this was a limitation in browsers where intentional: https://www.cookiestatus.com/chrome/.
+
+ 
+
+Therefore, we decided to create the event in GTM.  We added a parameter for the event called “form page location”.  This parameter is coming from a tag we included into the page “Set Cookie - Page location - Marketo Form”.  This cookie should allow us to see the full url of that form url page once they land on the “thank you page”.  Tags in GTM for reference: Marketo Webinar Form Submission and Set Cookie - Page location - Marketo Form.  Since we made the change recently, it looks like it sort of works for some pages, but not other.  I’d like your thoughts on how we can tackle this.
+","Your tag that writes the page path cookie when clicking the submit button is set to fire only when the hostname is start.uipath.com, but I found a few forms that are on www.uipath.com. When a user hits the thank-you page, there's no cookie to draw from when the event fires.
+
+I'd recommend either making sure all your webinar forms are on the start subdomain, or using something other than the subdomain to detect if the user is filling out a webinar form (maybe by injecting a ""webinar"" html attribute or class in your webinar marketo forms).","Our event in GA4 isn't capturing the full URL of the webinar form page for all submissions. How can we fix this?
+
+","Check the tag settings first. 
+
+A past issue was that the tag setting the cookie to store the form page location is only firing on the ""start.uipath.com"" subdomain, but some forms are on the main domain.
+
+Solutions:
+
+Unify Form Locations:
+Move all webinar forms to the ""start.uipath.com"" subdomain.
+
+Alternative Form Detection:
+Use an HTML attribute or class (e.g., ""webinar"") to identify webinar forms on both subdomains and trigger the cookie accordingly."

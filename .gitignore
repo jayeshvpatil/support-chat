@@ -1,0 +1,6 @@
+.venv/*
+.streamlit/*
+chroma_db_oai/*
+__pycache__/
+poetry.lock
+dist/*
