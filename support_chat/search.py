@@ -9,7 +9,7 @@ os.environ['OPENAI_API_KEY'] = st.secrets["api_keys"]["OPENAI_API_KEY"]
 os.environ['GOOGLE_CSE_ID']=st.secrets["api_keys"]["GOOGLE_CSE_ID"]
 os.environ['GOOGLE_API_KEY']=st.secrets["api_keys"]["GOOGLE_API_KEY"]
 
-st.set_page_config(page_title="Interweb Explorer", page_icon="🌐",        layout="wide",
+st.set_page_config(page_title="GA Support Explorer", page_icon="🌐",        layout="wide",
         initial_sidebar_state="expanded",)
 
 st.sidebar.image("assets/further-logo.png",width=300)   
