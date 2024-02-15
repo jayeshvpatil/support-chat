@@ -7,9 +7,6 @@ from st_aggrid import AgGrid, GridUpdateMode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
 import pandas as pd
 from anonymizer import anonymize_text
-os.environ['OPENAI_API_KEY'] = st.secrets["api_keys"]["OPENAI_API_KEY"]
-os.environ['GOOGLE_CSE_ID']=st.secrets["api_keys"]["GOOGLE_CSE_ID"]
-os.environ['GOOGLE_API_KEY']=st.secrets["api_keys"]["GOOGLE_API_KEY"]
 
 def set_page_ui():
     st.set_page_config(page_title="GA Support Explorer", page_icon="🌐",        layout="wide",

@@ -20,6 +20,9 @@ from langchain.vectorstores import Chroma
 import streamlit as st
 
     
+os.environ['OPENAI_API_KEY'] = st.secrets["api_keys"]["OPENAI_API_KEY"]
+os.environ['GOOGLE_CSE_ID']=st.secrets["api_keys"]["GOOGLE_CSE_ID"]
+os.environ['GOOGLE_API_KEY']=st.secrets["api_keys"]["GOOGLE_API_KEY"]
 llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", temperature=0, streaming=True)
 embedding_function=OpenAIEmbeddings()
 vectorstore = Chroma(embedding_function=OpenAIEmbeddings(), persist_directory="./chroma_db_oai")
