@@ -7,6 +7,10 @@ from st_aggrid import AgGrid, GridUpdateMode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
 import pandas as pd
 from anonymizer import anonymize_text
+import spacy.cli
+
+def load_spacy_models_for_pii():
+    spacy.cli.download("en_core_web_lg")
 
 def set_page_ui():
     st.set_page_config(page_title="GA Support Explorer", page_icon="🌐",        layout="wide",
@@ -57,6 +61,9 @@ def perform_search(input, chain, container_title, spinner_message, task_type='q&
 # Initialize session state
 set_page_ui()
 initialize_session_state()
+with st.spinner('loading spaCy models for pii detection'):
+    load_spacy_models_for_pii()
+
 
 search_retriever_chain = st.session_state.search_retriever_chain
 qa_chain = st.session_state.qa_chain
