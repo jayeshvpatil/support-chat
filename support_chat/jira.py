@@ -3,19 +3,11 @@ import json
 import pandas as pd
 import streamlit as st
 from typing import List, Tuple
-from chain import load_search_retriever_chain, load_qa_chain
+from chain import load_summarize_issue_chain
 from streaming import StreamHandler, PrintRetrievalHandler
+import os
 
 
-def init_chain():
-    # Make retriever and llm
-    if 'search_retriever_chain' not in st.session_state:
-        st.session_state['search_retriever_chain']= load_search_retriever_chain()
-    if 'qa_chain' not in st.session_state:   
-        st.session_state['qa_chain'] = load_qa_chain() 
-    search_retriever_chain = st.session_state.search_retriever_chain
-    qa_chain = st.session_state.qa_chain
-    return search_retriever_chain,qa_chain
 
 def getJiraIssue(username, token, domain, projectKey, startAt):
     headers = {
@@ -24,7 +16,7 @@ def getJiraIssue(username, token, domain, projectKey, startAt):
     params = {
         "jql": "project = " + projectKey,
         "fieldsByKeys": "false",
-        "fields": ["summary","status","assignee","created","issuetype","priority","creator","labels","updated", "description"],
+        "fields": ["summary","description","status","assignee","created","issuetype","priority","creator","labels","updated"],
         "startAt": startAt,
         "maxResults": 10
     }
@@ -88,7 +80,7 @@ def filter(data: pd.DataFrame, column: str, values: List[str]) -> pd.DataFrame:
 def load_data(username, token, domain, projectKey):
     rawData = getApiPagination(username, token, domain, projectKey)
 
-    columns=["id","key","summary","status","assignee","issuetype","priority","creator","labels", "description","created","updated"]
+    columns=["id","key","summary","description","status","assignee","issuetype","priority","creator","labels","created","updated"]
     issueList = rawData.get("issues")
     data = [] 
     for issue in issueList:
@@ -97,13 +89,13 @@ def load_data(username, token, domain, projectKey):
                         "id": issue.get("id"), 
                         "key": issue.get("key"),
                         "summary": issue.get("fields").get("summary", None),
+                        "description": issue.get("fields").get("description", None),
                         "status": issue.get("fields").get("status", None).get("name", None),
                         "assignee": issue.get("fields").get("assignee", None).get("displayName", None),
                         "issuetype": issue.get("fields").get("issuetype", None).get("name", None),
                         "priority": issue.get("fields").get("priority", None).get("name", None),
                         "creator": issue.get("fields").get("creator", None).get("displayName", None),
                         "labels": issue.get("fields").get("labels", None),
-                        "description": issue.get("fields").get("description", None),
                         "created": issue.get("fields").get("created", None),
                         "updated": issue.get("fields").get("updated", None),
                     }
@@ -140,18 +132,22 @@ def format_chat_history_to_markdown(chat_history):
     markdown_output = '\n\n'.join(markdown_lines)
     return markdown_output
 
-def get_issues():
-
-    df = load_data(st.secrets["jira_connection"]["username"],
-                st.secrets["jira_connection"]["token"],
-                st.secrets["jira_connection"]["domain"],
-                st.secrets["jira_connection"]["project_key"]
-                )
-    priority, status, creator,assignee = display_filters(df)
+def get_jira_tickets(refresh=True):
+    csv_file_path = 'data/issues_data.csv' 
+    if refresh or not os.path.exists(csv_file_path):
+        # Load fresh data
+        df = load_data(st.secrets["jira_connection"]["username"],
+                       st.secrets["jira_connection"]["token"],
+                       st.secrets["jira_connection"]["domain"],
+                       st.secrets["jira_connection"]["project_key"])
+        df.to_csv(csv_file_path, index=False)
+    else:
+        df = pd.read_csv(csv_file_path, dtype={'description': str})
+    priority, status, creator, assignee = display_filters(df)
     filtered_df = df.copy()
     filtered_df = filter(filtered_df, 'priority', priority)
     filtered_df = filter(filtered_df, 'status', status)
     filtered_df = filter(filtered_df, 'creator', creator)
     filtered_df = filter(filtered_df, 'assignee', assignee)
-    filtered_df['description'] = df['description'].apply(format_chat_history_to_markdown)
+    filtered_df['description'] = filtered_df['description'].apply(format_chat_history_to_markdown)
     return filtered_df
