@@ -3,11 +3,8 @@ from chain import load_search_retriever_chain, load_qa_chain,load_summarize_issu
 from streaming import StreamHandler, PrintRetrievalHandler
 import os
 from jira import get_jira_tickets
-from st_aggrid import AgGrid, GridUpdateMode
-from st_aggrid.grid_options_builder import GridOptionsBuilder
 import pandas as pd
 from anonymizer import anonymize_text
-import spacy.cli
 
 def set_page_ui():
     st.set_page_config(page_title="GA Support Explorer", page_icon="🌐",        layout="wide",
@@ -33,8 +30,15 @@ def initialize_session_state():
         st.session_state['qa_chain'] = load_qa_chain()
     if 'summarize_chain' not in st.session_state:
         st.session_state['summarize_chain'] = load_summarize_issue_chain()
+def display_header():
+    header_cols = st.columns([1, 4, 1, 1,1])
+    header_cols[0].markdown("**Case#**")
+    header_cols[1].markdown("**Summary**")
+    header_cols[2].markdown("**Status**")
+    header_cols[3].markdown("**Priority**")
+    header_cols[4].markdown("**Action**")
 
-def perform_search(input, chain, container_title, spinner_message, task_type='q&a'):
+def run_chain(input, chain, container_title, spinner_message, task_type='q&a'):
     with st.container():
         st.subheader(container_title)
         with st.spinner(spinner_message):
@@ -55,6 +59,14 @@ def perform_search(input, chain, container_title, spinner_message, task_type='q&
                 answer_container.info('`Sources:`\n\n' + result['sources'])
             return result
 
+def perform_search(question):
+    further_knowledgebase_tab, ga4_documentation_tab = st.tabs(['Further Knowledgebase', 'GA4 Documentation'])
+    with further_knowledgebase_tab:
+        run_chain(question, qa_chain, "Searching Further's knowledgebase...", "Please wait, searching...", 'q&a')
+    with ga4_documentation_tab:
+        ruun_chain(question, search_retriever_chain, "Searching the GA4 Documentation and web...", "Please wait, searching...",'q&a')
+
+
 # Initialize session state
 set_page_ui()
 initialize_session_state()
@@ -66,46 +78,33 @@ summarize_chain = st.session_state.summarize_chain
 tab1, tab2 = st.tabs(["Jira Tracker", "Q&A"])
 with tab1:
     df = get_jira_tickets()
-    gd = GridOptionsBuilder.from_dataframe(df)
-    gd.configure_column(field="description", header_name="Description", height=50, wrapText=True, autoHeigh=True)
-    gd.configure_pagination(enabled=True)
-    gd.configure_selection(selection_mode='single', use_checkbox=True)
-    grid_options= gd.build()
-    grid_table = AgGrid(df, 
-                        gridOptions=grid_options,
-                        width='100%',
-                        theme='material', 
-                        update_mode=GridUpdateMode.GRID_CHANGED,
-                        reload_data=True,
-                        allow_unsafe_jscode=True,
-                        columns_auto_size_mode=2,
-                        enable_quicksearch=True,
-                        editable=True)
-    if grid_table['selected_rows']:
-        selected_ticket= grid_table['selected_rows'][0]['description']
-        anonymized_ticket = anonymize_text(selected_ticket)
+    display_header()
+    for index, row in df.iterrows():
+        cols = st.columns([1, 4, 1, 1,1])
+        cols[0].write(row["id"])
+        cols[1].write(row["summary"])
+        cols[2].write(row["status"])
+        cols[3].write(row["priority"])
+        clicked = cols[4].button("Answer", key=index)
+        if clicked:
+            st.session_state["clicked_row"] = index
+    if "clicked_row" in st.session_state:
+        clicked_row_index = st.session_state["clicked_row"]
+        description = df.iloc[clicked_row_index]['description']
+    if description:
+        anonymized_ticket = anonymize_text(description)
         if anonymized_ticket:
             with st.expander(f'Selected Ticket : {anonymized_ticket[:60]}'):
                 st.markdown(anonymized_ticket)
-            result =perform_search(anonymized_ticket, summarize_chain, "Summarizing Ticket...", "Please wait, summarizing...",'summarize')
+            result =run_chain(anonymized_ticket, summarize_chain, "Summarizing Ticket...", "Please wait, summarizing...",'summarize')
             if 'output_text' in result:
                 question = st.text_area(label="Answer issue",value = result['output_text'])
                 submit = st.button("Answer the question", type='primary')
                 if question and submit:
-                    further_knowledgebase_tab, ga4_documentation_tab = st.tabs(['Further Knowledgebase', 'GA4 Documentation'])
-                    with further_knowledgebase_tab:
-                        perform_search(question, qa_chain, "Searching Further's knowledgebase...", "Please wait, searching...", 'q&a')
-                    with ga4_documentation_tab:
-                        perform_search(question, search_retriever_chain, "Searching the GA4 Documentation and web...", "Please wait, searching...",'q&a')
-
-
+                    perform_search(question)
         
 with tab2:
     question = st.text_area("Ask a question:")
     submit = st.button("Submit Question")
     if question and submit:
-        further_knowledgebase_tab, ga4_documentation_tab = st.tabs(['Further Knowledgebase', 'GA4 Documentation'])
-        with further_knowledgebase_tab:
-            perform_search(question, qa_chain, "Searching Further's knowledgebase...", "Please wait, searching...", 'q&a')
-        with ga4_documentation_tab:
-            perform_search(question, search_retriever_chain, "Searching the GA4 Documentation and web...", "Please wait, searching...",'q&a')
+        perform_search(question)
